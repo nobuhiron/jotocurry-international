@@ -26,7 +26,7 @@ const getHeaders = () => ({
  * @param queries - クエリパラメータ（オプション）
  * @returns コンテンツデータ
  */
-export async function getContent<T = any>(
+export async function getContent<T = unknown>(
   endpoint: string,
   queries?: Record<string, string | number | boolean>
 ): Promise<T> {
@@ -58,7 +58,7 @@ export async function getContent<T = any>(
  * @param queries - クエリパラメータ（オプション）
  * @returns コンテンツ一覧データ
  */
-export async function getContents<T = any>(
+export async function getContents<T = unknown>(
   endpoint: string,
   queries?: Record<string, string | number | boolean>
 ): Promise<{
@@ -96,7 +96,7 @@ export async function getContents<T = any>(
  * @param queries - クエリパラメータ（オプション）
  * @returns コンテンツデータ
  */
-export async function getContentById<T = any>(
+export async function getContentById<T = unknown>(
   endpoint: string,
   contentId: string,
   queries?: Record<string, string | number | boolean>

@@ -1,12 +1,13 @@
 import type { MiddlewareHandler } from 'astro';
-import { getLocale, DEFAULT_LOCALE, SUPPORTED_LOCALES } from './lib/i18n';
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from './lib/i18n';
+import type { Locale } from './lib/i18n';
 
 /**
  * 言語判定とリダイレクト処理
  * ルートパス（/）にアクセスした場合、デフォルト言語にリダイレクト
  */
 export const onRequest: MiddlewareHandler = async (context, next) => {
-  const { url, request } = context;
+  const { request } = context;
   const urlObj = new URL(request.url);
   const pathname = urlObj.pathname;
 
@@ -23,7 +24,8 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
   // 言語プレフィックスが含まれているか確認
   const langMatch = pathname.match(/^\/(ja|en)\//);
 
-  if (langMatch && SUPPORTED_LOCALES.includes(langMatch[1] as any)) {
+  const locale = langMatch?.[1] as Locale | undefined;
+  if (locale && SUPPORTED_LOCALES.includes(locale)) {
     // 有効な言語プレフィックスが含まれている場合はそのまま処理
     return next();
   }
