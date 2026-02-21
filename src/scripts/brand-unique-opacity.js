@@ -10,6 +10,14 @@ export default function initBrandUniqueOpacity() {
     return;
   }
 
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    textBlocks.forEach((block) => block.classList.add('is-active'));
+    if (imageElements.length > 0) {
+      imageElements[0].classList.add('is-active');
+    }
+    return;
+  }
+
   // ブレークポイント（1024px）をチェック
   const isDesktop = () => window.innerWidth >= 1024;
 

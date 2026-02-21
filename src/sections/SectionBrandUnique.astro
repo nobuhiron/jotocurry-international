@@ -14,7 +14,7 @@ const { locale = 'ja' } = Astro.props;
 const uniqueText = translations.brand.unique[locale];
 
 const images = [curryLadleImage, ingredientsImage, curryPasteImage];
-const imageAlts = ['カレースプーン', '食材', 'カレーペースト'];
+const imageAlts = uniqueText.imageAlts;
 ---
 
 <section class="p-brand-unique l-section" data-bg="alt" id="section-brand-unique">
@@ -33,7 +33,7 @@ const imageAlts = ['カレースプーン', '食材', 'カレーペースト'];
                 <p class="p-brand-unique__text-block-text">{block.text}</p>
                 {images[index] && (
                   <div class="p-brand-unique__image">
-                    <Image src={images[index]} alt={imageAlts[index]} width={1260} height={709} />
+                    <Image src={images[index]} alt={imageAlts[index]} width={1260} height={709} loading="lazy" />
                   </div>
                 )}
               </div>
@@ -43,7 +43,7 @@ const imageAlts = ['カレースプーン', '食材', 'カレーペースト'];
         <div class="p-brand-unique__image-column">
           {images.map((image, index) => (
             <div class="p-brand-unique__image">
-              <Image src={image} alt={imageAlts[index]} width={1260} height={709} />
+              <Image src={image} alt={imageAlts[index]} width={1260} height={709} loading="lazy" />
             </div>
           ))}
         </div>

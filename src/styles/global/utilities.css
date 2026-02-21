@@ -12,3 +12,20 @@
   clip: rect(0 0 0 0);
   overflow: hidden; white-space: nowrap;
 }
+
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-brown, #5c3d2e);
+  color: #fff;
+  font-weight: var(--fw-bold, 700);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.skip-to-main:focus {
+  left: 0;
+}

@@ -120,6 +120,15 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .p-brand-unique__text-block,
+  .p-brand-unique__image-column .p-brand-unique__image {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .p-brand-unique__image-placeholder {
   width: 100%;
   aspect-ratio: 3 / 4;

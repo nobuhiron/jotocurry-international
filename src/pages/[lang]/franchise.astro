@@ -20,6 +20,7 @@ const { lang } = Astro.params;
 const locale = (lang as Locale) || 'ja';
 const franchiseData = translations.franchise;
 const franchisePageText = franchiseData.page[locale];
+const metaText = translations.meta[locale];
 const franchiseTranslations = getTranslation('franchise', locale) as {
   mechanisms: typeof translations.franchise.mechanisms[typeof locale];
   support: typeof translations.franchise.support[typeof locale];
@@ -27,7 +28,7 @@ const franchiseTranslations = getTranslation('franchise', locale) as {
 };
 ---
 
-	<Layout title={franchisePageText.title} locale={locale}>
+	<Layout title={franchisePageText.title} description={metaText.franchise.description} canonicalPath={`/${locale}/franchise`} locale={locale}>
 	<SectionPageHero
 		title={franchisePageText.heroTitle}
 		subtitle={franchisePageText.heroSubtitle}

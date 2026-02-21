@@ -43,7 +43,7 @@ const menuItemImages = [
         </div>
       </div>
 <div class="p-brand-menu__image">
-            <Image src={signatureCurry} alt={menuText.imageAlt} width={500} height={500} />
+            <Image src={signatureCurry} alt={menuText.imageAlt} width={500} height={500} loading="lazy" />
           </div>
       <div class="p-brand-menu__popular">
         <h3 class="p-brand-menu__popular-title">{menuText.popularTitle}</h3>
@@ -51,7 +51,7 @@ const menuItemImages = [
           {menuText.menuItems.map((item, index) => (
             <div class="p-brand-menu__popular-card">
               <div class="p-brand-menu__popular-card-image">
-                <Image src={menuItemImages[index]} alt={item.alt} width={500} height={500} />
+                <Image src={menuItemImages[index]} alt={item.alt} width={500} height={500} loading="lazy" />
               </div>
               <div class="p-brand-menu__popular-card-content">
                 <span class="p-brand-menu__popular-card-category">{item.category}</span>

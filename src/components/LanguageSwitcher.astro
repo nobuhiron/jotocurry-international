@@ -80,7 +80,7 @@ const languages = [
 
   .c-language-switcher__dropdown {
     position: absolute;
-    top: -100%;
+    top: 100%;
     right: 0;
     margin-top: 0.5rem;
     min-width: 120px;
@@ -94,7 +94,6 @@ const languages = [
     transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
   }
 
-  .c-language-switcher:hover .c-language-switcher__dropdown,
   .c-language-switcher__toggle[aria-expanded="true"] + .c-language-switcher__dropdown {
     opacity: 1;
     visibility: visible;
@@ -111,7 +110,6 @@ const languages = [
     transform: translateX(-10px);
   }
 
-  .l-header__mobile-language .c-language-switcher:hover .c-language-switcher__dropdown,
   .l-header__mobile-language
     .c-language-switcher__toggle[aria-expanded='true']
     + .c-language-switcher__dropdown {

@@ -54,6 +54,10 @@
   white-space: nowrap;
 }
 
+.l-footer__text {
+  font-style: normal;
+}
+
 .l-footer__postal-code {
   display: block;
 }

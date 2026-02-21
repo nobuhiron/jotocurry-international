@@ -4,6 +4,7 @@ import SectionHero from '../../sections/SectionHero.astro';
 import SectionAbout from '../../sections/SectionAbout.astro';
 import SectionBrandPower from '../../sections/SectionBrandPower.astro';
 import SectionReasons from '../../sections/SectionReasons.astro';
+import { translations } from '../../data/translations';
 import type { Locale } from '../../lib/i18n';
 
 export const prerender = true;
@@ -17,9 +18,10 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const locale = (lang as Locale) || 'ja';
+const metaText = translations.meta[locale];
 ---
 
-<Layout title="上等カレー" locale={locale}>
+<Layout title={metaText.home.title} description={metaText.home.description} canonicalPath={`/${locale}/`} locale={locale}>
 	<SectionHero locale={locale} />
 	<SectionAbout locale={locale} />
 	<SectionBrandPower locale={locale} />

@@ -11,6 +11,8 @@ export default function initBrandStores() {
     return;
   }
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   new Splide(carouselElement, {
     type: 'loop',
     perPage: 1,
@@ -18,6 +20,7 @@ export default function initBrandStores() {
     gap: '1.5rem',
     pagination: true,
     arrows: true,
+    speed: prefersReducedMotion ? 0 : 400,
     breakpoints: {
       768: {
         perPage: 2,
