@@ -34,6 +34,10 @@ export default function initBrandPower() {
 
   splide.mount();
 
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
   // 連続スクロールを実装
   let scrollPosition = 0;
   const scrollSpeed = 0.5; // ピクセル/フレーム

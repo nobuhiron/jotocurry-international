@@ -10,6 +10,14 @@ export default function initBrandHistoryAnimation() {
   }
 
   const items = timelineElement.querySelectorAll('.p-brand-history__item');
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setTimelineHeights();
+    timelineElement.classList.add('is-animated');
+    items.forEach((item) => item.classList.add('is-active'));
+    return;
+  }
+
   let timelineAnimated = false;
 
   // タイムラインの高さを設定

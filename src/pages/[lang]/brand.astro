@@ -20,9 +20,10 @@ export async function getStaticPaths() {
 const { lang } = Astro.params;
 const locale = (lang as Locale) || 'ja';
 const brandPageText = translations.brand.page[locale];
+const metaText = translations.meta[locale];
 ---
 
-<Layout title={brandPageText.title} locale={locale}>
+<Layout title={brandPageText.title} description={metaText.brand.description} canonicalPath={`/${locale}/brand`} locale={locale}>
 	<SectionPageHero
 		title={brandPageText.heroTitle}
 		subtitle={brandPageText.heroSubtitle}

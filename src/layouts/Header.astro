@@ -64,10 +64,10 @@ const navItems = [
     <!-- Mobile Menu Toggle -->
     <button
       class="l-header__menu-toggle"
+      id="menu-toggle-btn"
       aria-expanded="false"
       aria-label={headerText.ariaLabels.openMenu}
       aria-controls="mobile-menu"
-      onclick="toggleMobileMenu()"
     >
       <span class="l-header__menu-toggle-icon">
         <span></span>
@@ -78,7 +78,7 @@ const navItems = [
   </div>
 
   <!-- Mobile Menu Overlay -->
-  <div class="l-header__mobile-menu-overlay" id="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
+  <div class="l-header__mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
   <!-- Mobile Menu -->
   <div class="l-header__mobile-menu" id="mobile-menu">
@@ -88,8 +88,8 @@ const navItems = [
       </a>
       <button
         class="l-header__mobile-menu-close"
+        id="mobile-menu-close-btn"
         aria-label={headerText.ariaLabels.closeMenu}
-        onclick="closeMobileMenu()"
       >
         ×
       </button>
@@ -123,6 +123,14 @@ const navItems = [
   </div>
 </header>
 
-<script is:inline src="/header.js"></script>
+<script>
+  import initHeader from '../scripts/header.js';
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHeader);
+  } else {
+    initHeader();
+  }
+</script>
 
 

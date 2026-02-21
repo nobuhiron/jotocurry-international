@@ -7,7 +7,6 @@ import brandHistoryImage2 from '../assets/images/brand-history-2.jpg';
 import brandHistoryImage3 from '../assets/images/brand-history-3.jpg';
 import { getLocalizedPath } from '../lib/i18n';
 const brandHistoryImages = [brandHistoryImage1, brandHistoryImage2, brandHistoryImage3];
-const brandHistoryImageAlts = ['グルメの街。大阪で誕生', 'ナショナルブランドへと成長', 'グローバルブランドへと成長'];
 import { translations } from '../data/translations';
 import type { Locale } from '../lib/i18n';
 
@@ -41,7 +40,7 @@ const historyText = translations.brand.history[locale];
         {historyText.timeline.map((item, index) => (
           <BrandHistoryItem
             imageSrc={brandHistoryImages[index]}
-            imageAlt={brandHistoryImageAlts[index]}
+            imageAlt={item.imageAlt}
             year={item.year}
             heading={item.heading}
             description={item.description}

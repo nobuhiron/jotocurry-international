@@ -17,9 +17,10 @@ const { lang } = Astro.params;
 const locale = (lang as Locale) || 'ja';
 const pageText = translations.privacy.page[locale];
 const contentText = translations.privacy.content[locale];
+const metaText = translations.meta[locale];
 ---
 
-<Layout title={pageText.title} locale={locale}>
+<Layout title={pageText.title} description={metaText.privacy.description} canonicalPath={`/${locale}/privacy`} locale={locale}>
   <SectionPageHero
     title={pageText.heroTitle}
     subtitle={pageText.heroSubtitle}

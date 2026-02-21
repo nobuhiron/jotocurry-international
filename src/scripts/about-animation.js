@@ -9,6 +9,11 @@ export default function initAboutAnimation() {
     return;
   }
 
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    worldMapElement.classList.add('is-animated');
+    return;
+  }
+
   // Intersection Observerでスクロールを検知
   const observer = new IntersectionObserver(
     (entries) => {

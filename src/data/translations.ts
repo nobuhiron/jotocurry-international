@@ -193,7 +193,7 @@ export const translations = {
       },
       labels: {
         address: '住所:',
-        contact: '問い合わせ:',
+        contact: 'お問い合わせ:',
       },
       companyInfo: {
         postalCode: '〒541-0052',
@@ -201,7 +201,7 @@ export const translations = {
       },
       legal: {
         privacy: 'プライバシーポリシー',
-        cookie: 'cookieについて',
+        cookie: 'Cookieについて',
       },
       ariaLabel: 'フッターナビゲーション',
       logoAlt: '上等カレー',
@@ -238,10 +238,10 @@ export const translations = {
     ja: {
       title: 'どんな小さな疑問でも、お気軽にご相談ください。',
       questions: [
-        '初期投資は具体的にいくら必要?',
-        '未経験でも本当に運営できる?',
-        '開業までどのくらいの期間がかかる?',
-        '実際の収益モデルはどうなっている?',
+        '初期費用はどれくらい必要ですか？',
+        '未経験でも運営できますか？',
+        '開業までどのくらいの期間がかかりますか？',
+        '収益モデルはどのようになっていますか？',
       ],
       text: '経験豊富なスタッフが、親身にお答えします。',
       button: '出店のご相談はこちら',
@@ -480,23 +480,25 @@ export const translations = {
     unique: {
       ja: {
         title: '唯一無二の味づくり',
+        imageAlts: ['カレースプーン', '食材', 'カレーペースト'],
         blocks: [
           {
-            title: '甘み、スパイス、旨みが織り成す<br class="is-sm">ハーモニー',
-            text: 'ひと口目のやさしい甘み。 食べ進めるほどに広がる香り高いスパイスと深い旨み。 そして最後に残る、豊かな余韻。 計算し尽くされた三層の味わいが、 お客様の「また食べたい」を生み出します。',
+            title: '甘み、スパイス、旨みが織りなす<br class="is-sm">ハーモニー',
+            text: 'ひと口目のやさしい甘み。食べ進めるほどに広がる香り高いスパイスと深い旨み。そして最後に残る、豊かな余韻。計算し尽くされた三層の味わいが、お客様の「また食べたい」を生み出します。',
           },
           {
             title: '素材と技術が生む深いコク',
-            text: '厳選した国産牛と玉ねぎ。 独自ブレンドのスパイス。 加圧調理と低温熟成。 40年かけて完成させた製法が、 他では真似できない深いコクを生み出します。 この確立された製法により、 未経験でも本格的な味を安定して提供できます。',
+            text: '厳選した国産牛と玉ねぎ。独自ブレンドのスパイス。加圧調理と低温熟成。40年かけて完成させた製法が、他では真似できない深いコクを生み出します。この確立された製法により、未経験でも本格的な味を安定して提供できます。',
           },
           {
             title: '三人だけが知る秘伝のエキス',
-            text: '上等カレーの味の決め手となるのは、大阪で職人の手により丁寧に作られる秘伝のエキスです。そのレシピは創業者を含むわずか三人だけが知る門外不出のもの。甘味、辛味、旨味が絶妙に調和したこの味こそが、上等カレーの真髄です。この厳格な品質管理が、すべての店舗で 変わらぬ本物の味を保証します。',
+            text: '上等カレーの味の決め手となるのは、大阪で職人の手により丁寧に作られる秘伝のエキスです。そのレシピは創業者を含むわずか三人だけが知る門外不出のもの。甘み・辛み・旨みが絶妙に調和したこの味こそが、上等カレーの真髄です。この厳格な品質管理が、すべての店舗で変わらぬ本物の味を保証します。',
           },
         ],
       },
       en: {
         title: 'Unique Flavor Creation',
+        imageAlts: ['Curry ladle', 'Ingredients', 'Curry paste'],
         blocks: [
           {
             title: 'Carefully Selected Spices, Made with Care',
@@ -518,10 +520,10 @@ export const translations = {
         title: '幅広いニーズに応える豊富なメニュー',
         paragraphs: [
           {
-            text: '上等カレーの看板メニューは「カツカレー」。サクサクの衣とコク深い甘辛ルーの組み合わせは、 国や世代を問わず高い支持を集めています。',
+            text: '上等カレーの看板メニューは「カツカレー」。サクサクの衣とコク深い甘辛ルーの組み合わせは、国や世代を問わず高い支持を集めています。',
           },
           {
-            text: '基本のカレーをベースに、複雑な仕込みは不要。 トッピングや辛さ調整だけで、お客様に豊富な選択肢を提供できます。 シンプルなオペレーションで、効率的な店舗運営が可能です。さらに、地域特性に合わせたオリジナルメニューの開発もサポート。 あなたの店舗ならではの強みを生み出せます。',
+            text: '基本のカレーをベースに、複雑な仕込みは不要。トッピングや辛さ調整だけで、お客様に豊富な選択肢を提供できます。シンプルなオペレーションで、効率的な店舗運営が可能です。さらに、地域特性に合わせたオリジナルメニューの開発もサポート。あなたの店舗ならではの強みを生み出せます。',
           },
         ],
         popularTitle: '人気メニュー紹介',
@@ -593,14 +595,14 @@ export const translations = {
       ja: {
         title: '上等カレーの世界への歩み',
         intro:
-          '40年以上の実績を持つブランドだからこそ、安定したフランチャイズ運営が可能です。1983年、大阪の小さな店舗から始まった上等カレーは、 今や国内外に展開するグローバルブランドへ。この確かな成長の歴史が、あなたの成功を支えます。',
+          '40年以上の実績を持つブランドだからこそ、安定したフランチャイズ運営が可能です。1983年、大阪の小さな店舗から始まった上等カレーは、今や国内外に展開するグローバルブランドへ。この確かな成長の歴史が、あなたの成功を支えます。',
         button: 'フランチャイズのご相談はこちら',
         timeline: [
           {
             year: '1983',
             heading: 'グルメの街。大阪で誕生',
             description:
-              '食の都・大阪・大阪で「手打ちうどん 得正」として創業。創業者のこだわりが生んだカレーうどんが評判を呼び、カレー専門店への展開を決意。',
+              '食の都・大阪で「手打ちうどん 得正」として創業。創業者のこだわりが生んだカレーうどんが評判を呼び、カレー専門店への展開を決意。',
             imageAlt: 'グルメの街。大阪で誕生',
           },
           {
@@ -795,9 +797,9 @@ export const translations = {
         subtitle:
           '初期費用やトレーニング、サポート体制など、オーナー候補の方から多く寄せられるご質問をまとめました。',
         cta: {
-          title: 'まだ質問がありますか?',
+          title: 'まだ質問がありますか？',
           text: 'こちらにないご質問も、お気軽にご相談ください。詳細について直接お話しさせていただきます。',
-          button: '問い合わせをする',
+          button: 'お問い合わせはこちら',
         },
       },
       en: {
@@ -969,6 +971,50 @@ export const translations = {
           },
         ],
         lastUpdated: 'Last Updated: January 2024',
+      },
+    },
+  },
+  meta: {
+    ja: {
+      home: {
+        title: '上等カレー | 海外フランチャイズオーナー募集',
+        description: '大阪発の甘辛カツカレー「上等カレー」の海外フランチャイズオーナーを募集中。40年の実績とシンプルなオペレーションで、未経験からでもスタート可能です。',
+      },
+      brand: {
+        description: '1970年代から続く大阪発のカレー専門店「上等カレー」のブランドストーリー。唯一無二の味づくりと世界への歩みをご紹介します。',
+      },
+      franchise: {
+        description: '上等カレーのフランチャイズ事業内容。安定した利益を生む4つの仕組み、充実したサポート体制、オーナーの声をご紹介します。',
+      },
+      contact: {
+        description: '上等カレーへのお問い合わせ。海外フランチャイズ・卸・メディア取材など、お気軽にご相談ください。',
+      },
+      privacy: {
+        description: '株式会社得正のプライバシーポリシー。個人情報の取り扱いについてご説明します。',
+      },
+      cookie: {
+        description: '上等カレー公式サイトのCookieの使用について。Cookieの種類と管理方法をご説明します。',
+      },
+    },
+    en: {
+      home: {
+        title: 'Joto Curry | International Franchise Owners Wanted',
+        description: "Osaka's sweet & spicy katsu curry franchise. 40 years of experience, simple operations, and no prior experience required. Start your Joto Curry franchise today.",
+      },
+      brand: {
+        description: "Discover the brand story of Joto Curry, Osaka's curry specialty restaurant since the 1970s. Learn about our unique flavor creation and global journey.",
+      },
+      franchise: {
+        description: "Joto Curry franchise business details. Learn about our 4 mechanisms for stable profits, comprehensive support system, and franchise owner testimonials.",
+      },
+      contact: {
+        description: 'Contact Joto Curry for international franchise, wholesale, media inquiries, and more. We welcome all inquiries.',
+      },
+      privacy: {
+        description: 'Privacy policy of Tokumasa Co., Ltd. explaining our handling of personal information.',
+      },
+      cookie: {
+        description: 'About the use of cookies on the Joto Curry official website. Types of cookies and how to manage them.',
       },
     },
   },

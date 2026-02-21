@@ -19,7 +19,7 @@ const aboutText = getTranslation('about', locale);
   <div class="p-about__world-map">
     <div class="p-about__world-map__overlay"></div>
     <div class="p-about__world-map__image" aria-label={locale === 'en' ? 'World map' : '世界地図'}>
-      <Image src={mapImage} alt={locale === 'en' ? 'World map' : '世界地図'} />
+      <Image src={mapImage} alt={locale === 'en' ? 'World map' : '世界地図'} loading="lazy" />
     </div>
     <div class="l-container p-about__container">
     <div class="p-about__content">
