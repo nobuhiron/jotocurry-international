@@ -533,3 +533,36 @@ import Footer from '../blocks/Footer.astro';
   - 新しい機能を追加する場合は `src/scripts/[機能名].js` に `initXxx()` を定義し、
     `main.js` から呼び出す
 ````
+
+## 納品前品質チェック（単発納品向け・軽量版）
+
+このプロジェクトの納品前チェックは、CI/E2E自動化ではなくローカル手動ゲートで実施する。
+
+### 合格条件
+
+- `astro check` と `build` がエラーなし
+- 主要5ページ（`/`,`/brand`,`/franchise`,`/contact`,`/privacy`）を ja/en で手動確認
+- 問い合わせフォームで以下を確認
+  - 必須未入力時のエラー表示
+  - 正常入力時の送信成功表示（安全運用のため実送信は行わない）
+- Lighthouse を納品直前に手動で1回実施（推奨閾値: Perf 90 / A11y 95 / BP 95 / SEO 95）
+
+### 実行コマンド
+
+```sh
+pnpm check:delivery
+```
+
+または:
+
+```sh
+scripts/run_local_checks.sh
+```
+
+### 報告書作成
+
+```sh
+scripts/new_report.sh
+```
+
+作成された `docs/delivery-quality-report-YYYYMMDD.md` に結果を記録して納品判定を行う。

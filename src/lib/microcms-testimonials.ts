@@ -10,7 +10,7 @@ import type { Locale } from './i18n';
  * @param locale - 言語（現在は使用していないが、将来的な拡張のため保持）
  * @returns フランチャイズボイス一覧（textJa, textEn, storeNameJa, storeNameEn, imageを含む）
  */
-export async function getTestimonials(locale: Locale = 'ja'): Promise<TestimonialContent[]> {
+export async function getTestimonials(_locale: Locale = 'ja'): Promise<TestimonialContent[]> {
   try {
     const { contents } = await getContents<TestimonialContent>('testimonials', {
       orders: '-createdAt', // 作成日時降順でソート

@@ -1,7 +1,6 @@
 ---
 import type { Locale } from '../lib/i18n';
 import { getLocalizedPath } from '../lib/i18n';
-import { SUPPORTED_LOCALES } from '../lib/i18n';
 
 interface Props {
   currentLocale: Locale;
@@ -92,6 +91,7 @@ const languages = [
     visibility: hidden;
     transform: translateY(-10px);
     transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+    z-index: 1002;
   }
 
   .c-language-switcher__toggle[aria-expanded="true"] + .c-language-switcher__dropdown {
@@ -100,20 +100,21 @@ const languages = [
     transform: translateY(0);
   }
 
-  /* モバイルメニュー内はスイッチの右隣で同じY位置に表示 */
+  /* モバイルメニュー内はトグル直下に表示して、画面外にはみ出さないようにする */
   .l-header__mobile-language .c-language-switcher__dropdown {
-    top: 0;
-    right: auto;
-    left: 100%;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    left: auto;
     margin-top: 0;
-    margin-left: 0.5rem;
-    transform: translateX(-10px);
+    margin-left: 0;
+    min-width: 100%;
+    transform: translateY(-10px);
   }
 
   .l-header__mobile-language
     .c-language-switcher__toggle[aria-expanded='true']
     + .c-language-switcher__dropdown {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .c-language-switcher__list {
@@ -146,6 +147,9 @@ const languages = [
 
 <script is:inline>
   (function () {
+    if (window.__languageSwitcherInitialized) return;
+    window.__languageSwitcherInitialized = true;
+
     function closeAll(except) {
       document.querySelectorAll('.c-language-switcher__toggle').forEach((btn) => {
         if (btn !== except) {

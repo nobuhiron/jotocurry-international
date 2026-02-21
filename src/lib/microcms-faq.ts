@@ -10,7 +10,7 @@ import type { Locale } from './i18n';
  * @param locale - 言語（現在は使用していないが、将来的な拡張のため保持）
  * @returns FAQ一覧（order, questionJa, answerJa, questionEn, answerEnを含む）
  */
-export async function getFaqs(locale: Locale = 'ja'): Promise<FaqContent[]> {
+export async function getFaqs(_locale: Locale = 'ja'): Promise<FaqContent[]> {
   try {
     const { contents } = await getContents<FaqContent>('faq', {
       orders: 'order', // orderフィールドでソート

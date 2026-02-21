@@ -79,5 +79,5 @@ export interface TestimonialContent extends MicroCMSContent {
  * 多言語対応コンテンツの基本型
  */
 export interface MultilingualContent extends MicroCMSContent {
-  [key: string]: any;
+  [key: string]: unknown;
 }

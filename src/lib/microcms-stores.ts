@@ -10,7 +10,7 @@ import type { Locale } from './i18n';
  * @param locale - 言語
  * @returns 店舗一覧
  */
-export async function getStores(locale: Locale = 'ja') {
+export async function getStores(_locale: Locale = 'ja') {
   const { contents } = await getContents<StoreContent>('stores', {
     orders: 'order',
   });

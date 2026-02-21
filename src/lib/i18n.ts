@@ -16,7 +16,7 @@ export function getLocale(url: URL): Locale {
   const pathname = url.pathname;
   const langMatch = pathname.match(/^\/(ja|en)\//);
 
-  if (langMatch && langMatch[1] === 'ja' || langMatch[1] === 'en') {
+  if (langMatch && (langMatch[1] === 'ja' || langMatch[1] === 'en')) {
     return langMatch[1] as Locale;
   }
 
@@ -48,12 +48,18 @@ export function getLocalizedPath(path: string, locale: Locale): string {
  * @returns 言語に応じたコンテンツ
  */
 export function getLocalizedContent(
-  content: Record<string, any>,
+  content: Record<string, unknown>,
   field: string,
   locale: Locale
 ): string {
   const localizedField = `${field}${locale === 'ja' ? 'Ja' : 'En'}`;
-  return content[localizedField] || content[field] || '';
+  const localizedValue = content[localizedField];
+  if (typeof localizedValue === 'string' && localizedValue.length > 0) {
+    return localizedValue;
+  }
+
+  const fallbackValue = content[field];
+  return typeof fallbackValue === 'string' ? fallbackValue : '';
 }
 
 /**

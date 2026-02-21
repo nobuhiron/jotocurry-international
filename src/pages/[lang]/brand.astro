@@ -7,6 +7,7 @@ import SectionBrandMenu from '../../sections/SectionBrandMenu.astro';
 import SectionBrandHistory from '../../sections/SectionBrandHistory.astro';
 import { translations } from '../../data/translations';
 import type { Locale } from '../../lib/i18n';
+import signatureCurryImage from '../../assets/images/signature-curry.jpg';
 
 export const prerender = true;
 
@@ -24,10 +25,11 @@ const metaText = translations.meta[locale];
 ---
 
 <Layout title={brandPageText.title} description={metaText.brand.description} canonicalPath={`/${locale}/brand`} locale={locale}>
-	<SectionPageHero
-		title={brandPageText.heroTitle}
-		subtitle={brandPageText.heroSubtitle}
-	/>
+		<SectionPageHero
+			title={brandPageText.heroTitle}
+			subtitle={brandPageText.heroSubtitle}
+			backgroundImage={signatureCurryImage}
+		/>
 	<SectionBrandOrigin locale={locale} />
 	<SectionBrandUnique locale={locale} />
 	<SectionBrandMenu locale={locale} />

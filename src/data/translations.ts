@@ -1020,15 +1020,24 @@ export const translations = {
   },
 };
 
+type Locale = 'ja' | 'en';
+type LocalizedSections = {
+  [K in keyof typeof translations]:
+    (typeof translations)[K] extends { ja: infer JA; en: infer EN }
+      ? { ja: JA; en: EN }
+      : never;
+};
+
 /**
  * 翻訳データを取得
  * @param section - セクション名
  * @param locale - 言語（'ja' | 'en'）
  * @returns 翻訳データ
  */
-export function getTranslation<T extends keyof typeof translations>(
+export function getTranslation<T extends keyof LocalizedSections>(
   section: T,
-  locale: 'ja' | 'en' = 'ja'
-): (typeof translations)[T][typeof locale] {
-  return translations[section][locale];
+  locale: Locale = 'ja'
+): LocalizedSections[T][Locale] {
+  const sectionData = translations[section] as LocalizedSections[T];
+  return sectionData[locale];
 }
