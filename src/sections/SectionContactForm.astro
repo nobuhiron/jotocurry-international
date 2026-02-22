@@ -48,7 +48,7 @@ const formText = translations.contact.form[locale];
       </div>
 
       <div class="p-contact-form__form-wrapper">
-        <div id="form-message" class="p-contact-form__message" role="alert" aria-live="polite"></div>
+        <div id="form-message" class="p-contact-form__message" role="status" aria-live="polite"></div>
         <form class="p-contact-form__form" id="contact-form" method="post" novalidate>
           <div class="p-contact-form__row">
             <div class="p-contact-form__field">
@@ -58,6 +58,7 @@ const formText = translations.contact.form[locale];
                 id="last-name"
                 name="last-name"
                 class="p-contact-form__input"
+                aria-describedby="error-last-name"
                 required
               />
               <span class="p-contact-form__error" id="error-last-name" role="alert"></span>
@@ -69,6 +70,7 @@ const formText = translations.contact.form[locale];
                 id="first-name"
                 name="first-name"
                 class="p-contact-form__input"
+                aria-describedby="error-first-name"
                 required
               />
               <span class="p-contact-form__error" id="error-first-name" role="alert"></span>
@@ -82,6 +84,7 @@ const formText = translations.contact.form[locale];
               id="email"
               name="email"
               class="p-contact-form__input"
+              aria-describedby="error-email"
               placeholder={formText.fields.emailPlaceholder}
               required
             />
@@ -94,6 +97,7 @@ const formText = translations.contact.form[locale];
               id="area"
               name="area"
               class="p-contact-form__select"
+              aria-describedby="error-area"
               required
             >
               <option value="">{formText.fields.areaPlaceholder}</option>
@@ -112,6 +116,7 @@ const formText = translations.contact.form[locale];
               id="purpose"
               name="purpose"
               class="p-contact-form__select"
+              aria-describedby="error-purpose"
               required
             >
               <option value="">{formText.fields.purposePlaceholder}</option>
@@ -133,6 +138,7 @@ const formText = translations.contact.form[locale];
                   name="situation"
                   value="restaurant-owner"
                   class="p-contact-form__radio"
+                  aria-describedby="error-situation"
                   required
                 />
                 <label for="situation-1" class="p-contact-form__radio-label">{formText.fields.situationOptions.restaurantOwner}</label>
@@ -144,6 +150,7 @@ const formText = translations.contact.form[locale];
                   name="situation"
                   value="conversion"
                   class="p-contact-form__radio"
+                  aria-describedby="error-situation"
                   required
                 />
                 <label for="situation-2" class="p-contact-form__radio-label">{formText.fields.situationOptions.conversion}</label>
@@ -155,6 +162,7 @@ const formText = translations.contact.form[locale];
                   name="situation"
                   value="developer"
                   class="p-contact-form__radio"
+                  aria-describedby="error-situation"
                   required
                 />
                 <label for="situation-3" class="p-contact-form__radio-label">{formText.fields.situationOptions.developer}</label>
@@ -166,6 +174,7 @@ const formText = translations.contact.form[locale];
                   name="situation"
                   value="individual"
                   class="p-contact-form__radio"
+                  aria-describedby="error-situation"
                   required
                 />
                 <label for="situation-4" class="p-contact-form__radio-label">{formText.fields.situationOptions.individual}</label>
@@ -191,6 +200,7 @@ const formText = translations.contact.form[locale];
               id="privacy"
               name="privacy"
               class="p-contact-form__checkbox"
+              aria-describedby="error-privacy"
               required
             />
             <label for="privacy" class="p-contact-form__checkbox-label">
@@ -259,17 +269,27 @@ const formText = translations.contact.form[locale];
           el.removeAttribute('style');
         }
       });
+
+      form.querySelectorAll('[aria-invalid="true"]').forEach((field) => {
+        field.removeAttribute('aria-invalid');
+      });
     }
 
-    function showFieldError(fieldName, message) {
+    function showFieldError(fieldName, message, shouldFocus = false) {
       const errorEl = errorElements[fieldName];
       if (!errorEl) return;
       errorEl.textContent = message;
       errorEl.classList.add('is-visible');
       errorEl.removeAttribute('style');
 
-      const field = form.querySelector(`[name="${fieldName}"]`);
+      const field = fieldName === 'situation'
+        ? form.querySelector(`input[name="${fieldName}"]`)
+        : form.querySelector(`[name="${fieldName}"]`);
       if (field) {
+        field.setAttribute('aria-invalid', 'true');
+      }
+
+      if (shouldFocus && field) {
         field.focus();
         field.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
@@ -278,6 +298,7 @@ const formText = translations.contact.form[locale];
     function validateForm() {
       clearAllErrors();
       let isValid = true;
+      let firstInvalidField = null;
 
       const formData = new FormData(form);
       const lastName = formData.get('last-name')?.toString().trim() || '';
@@ -290,37 +311,49 @@ const formText = translations.contact.form[locale];
 
       if (!lastName) {
         showFieldError('last-name', messages.errors.lastName);
+        firstInvalidField = firstInvalidField || 'last-name';
         isValid = false;
       }
 
       if (!firstName) {
         showFieldError('first-name', messages.errors.firstName);
+        firstInvalidField = firstInvalidField || 'first-name';
         isValid = false;
       }
 
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         showFieldError('email', messages.errors.email);
+        firstInvalidField = firstInvalidField || 'email';
         isValid = false;
       }
 
       if (!area) {
         showFieldError('area', messages.errors.area);
+        firstInvalidField = firstInvalidField || 'area';
         isValid = false;
       }
 
       if (!purpose) {
         showFieldError('purpose', messages.errors.purpose);
+        firstInvalidField = firstInvalidField || 'purpose';
         isValid = false;
       }
 
       if (!situation) {
         showFieldError('situation', messages.errors.situation);
+        firstInvalidField = firstInvalidField || 'situation';
         isValid = false;
       }
 
       if (privacy !== 'on') {
         showFieldError('privacy', messages.errors.privacy);
+        firstInvalidField = firstInvalidField || 'privacy';
         isValid = false;
+      }
+
+      if (firstInvalidField) {
+        const firstMessage = errorElements[firstInvalidField]?.textContent || '';
+        showFieldError(firstInvalidField, firstMessage, true);
       }
 
       return isValid;
@@ -352,6 +385,7 @@ const formText = translations.contact.form[locale];
         errorEl.textContent = '';
         errorEl.classList.remove('is-visible');
         errorEl.removeAttribute('style');
+        e.target.removeAttribute('aria-invalid');
       }
     });
 
@@ -362,6 +396,7 @@ const formText = translations.contact.form[locale];
         errorEl.textContent = '';
         errorEl.classList.remove('is-visible');
         errorEl.removeAttribute('style');
+        e.target.removeAttribute('aria-invalid');
       }
     });
 
@@ -455,4 +490,3 @@ const formText = translations.contact.form[locale];
     display: block;
   }
 </style>
-

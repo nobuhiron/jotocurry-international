@@ -38,7 +38,7 @@
     transform: scale(1.55);
   }
   @media (--lg) {
-    object-position: 30% 18%;
+    object-position: 30% 35%;
     transform-origin: 16% center;
   }
 }
