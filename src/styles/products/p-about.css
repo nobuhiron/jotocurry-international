@@ -1,3 +1,6 @@
+@import '../global/variables.css';
+@import '../global/custom_media.css';
+
 .p-about__text {
   line-height: var(--line-height-base);
   color: var(--color-text-on_dark);
