@@ -80,7 +80,7 @@ try {
     </div>
   </div>
   <div class="p-brand-power__carousel-wrapper">
-    <div class="p-brand-power__carousel splide" id="brand-power-carousel">
+    <div class="p-brand-power__carousel splide" id="brand-power-carousel" aria-label={locale === 'en' ? 'Store photos' : '店舗写真'} aria-roledescription={locale === 'en' ? 'carousel' : 'カルーセル'}>
       <div class="splide__track">
         <ul class="splide__list">
           {brandPowerImages.map((image) => (

@@ -64,6 +64,8 @@ try {
                 id={contentId}
                 class="p-contact-faq__content"
                 aria-labelledby={`faq-button-${index}`}
+                role="region"
+                hidden={!isFirst}
               >
                 <p class="p-contact-faq__answer">{faq.answer}</p>
               </div>
@@ -92,4 +94,3 @@ try {
     initContactFaq();
   }
 </script>
-

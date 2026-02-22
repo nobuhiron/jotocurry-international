@@ -56,8 +56,8 @@ const altPath = canonicalPath ? canonicalPath.replace(`/${locale}/`, `/${altLoca
     <Header locale={locale} />
     <main class="l-main" id="main-content">
       <slot />
+      <CtaSection locale={locale} />
     </main>
-    <CtaSection locale={locale} />
     <Footer locale={locale} />
   </body>
 </html>

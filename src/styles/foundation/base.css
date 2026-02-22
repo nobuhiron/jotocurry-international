@@ -24,10 +24,17 @@ button,
 a {
   cursor: pointer;
 }
-a:focus-visible,
-button:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid var(--color-main);
+
+:where(
+    a,
+    button,
+    input:not([type='radio']):not([type='checkbox']),
+    select,
+    textarea,
+    [tabindex]
+  ):focus-visible {
+  outline: 2px solid var(--color-accent-warm);
+  outline-offset: 2px;
 }
 img {
   width: 100%;
