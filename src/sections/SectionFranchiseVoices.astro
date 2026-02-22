@@ -1,5 +1,6 @@
 ---
 import SectionTitle from '../components/SectionTitle.astro';
+import { optimizeImageUrl } from '../lib/microcms';
 import { translations } from '../data/translations';
 import { getTestimonials } from '../lib/microcms-testimonials';
 import { getLocalizedTestimonial } from '../lib/i18n';
@@ -52,11 +53,15 @@ try {
                   <div class="p-franchise-voices__avatar" aria-hidden="true">
                     {testimonial.image ? (
                       <img
-                        src={testimonial.image.url}
+                        src={optimizeImageUrl(testimonial.image.url, 200)}
+                        srcset={`${optimizeImageUrl(testimonial.image.url, 96)} 96w, ${optimizeImageUrl(testimonial.image.url, 200)} 200w`}
+                        sizes="96px"
                         alt={testimonial.storeName}
-                        width={testimonial.image.width}
-                        height={testimonial.image.height}
+                        width={96}
+                        height={96}
                         loading="lazy"
+                        decoding="async"
+                        class="p-franchise-voices__avatar-img"
                       />
                     ) : (
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">

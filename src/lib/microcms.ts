@@ -90,6 +90,17 @@ export async function getContents<T = unknown>(
 }
 
 /**
+ * microCMS画像URLにimgixパラメータを付与してリサイズ・最適化
+ * @param url - microCMS画像URL
+ * @param width - リサイズ後の幅
+ * @param quality - 画質（デフォルト: 80）
+ */
+export function optimizeImageUrl(url: string, width: number, quality = 80): string {
+  const separator = url.includes('?') ? '&' : '?';
+  return `${url}${separator}w=${width}&q=${quality}&fm=webp`;
+}
+
+/**
  * microCMSから特定のIDのコンテンツを取得
  * @param endpoint - APIエンドポイント
  * @param contentId - コンテンツID

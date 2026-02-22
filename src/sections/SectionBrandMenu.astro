@@ -43,7 +43,16 @@ const menuItemImages = [
         </div>
       </div>
 <div class="p-brand-menu__image">
-            <Image src={signatureCurry} alt={menuText.imageAlt} width={500} height={500} loading="lazy" />
+            <Image
+            src={signatureCurry}
+            alt={menuText.imageAlt}
+            width={3840}
+            height={2160}
+            widths={[960, 1920, 3840]}
+            sizes="100vw"
+            format="webp"
+            loading="lazy"
+          />
           </div>
       <div class="p-brand-menu__popular">
         <h3 class="p-brand-menu__popular-title">{menuText.popularTitle}</h3>
@@ -51,7 +60,16 @@ const menuItemImages = [
           {menuText.menuItems.map((item, index) => (
             <div class="p-brand-menu__popular-card">
               <div class="p-brand-menu__popular-card-image">
-                <Image src={menuItemImages[index]} alt={item.alt} width={500} height={500} loading="lazy" />
+                <Image
+                src={menuItemImages[index]}
+                alt={item.alt}
+                width={1000}
+                height={1000}
+                widths={[500, 800, 1000]}
+                sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 50vw"
+                format="webp"
+                loading="lazy"
+              />
               </div>
               <div class="p-brand-menu__popular-card-content">
                 <span class="p-brand-menu__popular-card-category">{item.category}</span>
