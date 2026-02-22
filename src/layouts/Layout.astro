@@ -10,15 +10,56 @@ interface Props {
   locale?: Locale;
   description?: string;
   canonicalPath?: string;
+  ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title, locale = 'ja', description, canonicalPath } = Astro.props;
+const {
+  title,
+  locale = 'ja',
+  description,
+  canonicalPath,
+  ogImage = '/cta-bg.jpg',
+  noindex = false,
+} = Astro.props;
 const htmlLang = locale === 'en' ? 'en' : 'ja';
 const siteUrl = Astro.url.origin;
 const siteName = locale === 'en' ? 'Joto Curry' : '上等カレー';
 const canonicalUrl = canonicalPath ? `${siteUrl}${canonicalPath}` : Astro.url.href;
 const altLocale = locale === 'en' ? 'ja' : 'en';
 const altPath = canonicalPath ? canonicalPath.replace(`/${locale}/`, `/${altLocale}/`) : Astro.url.pathname.replace(`/${locale}/`, `/${altLocale}/`);
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage.startsWith('/') ? ogImage : `/${ogImage}`}`;
+const robotsContent = noindex ? 'noindex,nofollow' : 'index,follow';
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: '株式会社得正',
+    url: siteUrl,
+    logo: `${siteUrl}/logo.svg`,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+81-6-6926-8286',
+      contactType: 'customer service',
+      availableLanguage: ['ja', 'en'],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteName,
+    url: siteUrl,
+    inLanguage: htmlLang,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    url: canonicalUrl,
+    inLanguage: htmlLang,
+    description,
+  },
+];
 ---
 
 <!DOCTYPE html>
@@ -32,21 +73,30 @@ const altPath = canonicalPath ? canonicalPath.replace(`/${locale}/`, `/${altLoca
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content={robotsContent} />
     {description && <meta name="description" content={description} />}
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang={locale} href={canonicalUrl} />
-    <link rel="alternate" hreflang={altLocale} href={`${siteUrl}${altPath}`} />
-    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${canonicalPath ? canonicalPath.replace(`/${locale}/`, '/ja/') : Astro.url.pathname.replace(`/${locale}/`, '/ja/')}`} />
+    {!noindex && <link rel="alternate" hreflang={locale} href={canonicalUrl} />}
+    {!noindex && <link rel="alternate" hreflang={altLocale} href={`${siteUrl}${altPath}`} />}
+    {!noindex && <link rel="alternate" hreflang="x-default" href={`${siteUrl}${canonicalPath ? canonicalPath.replace(`/${locale}/`, '/ja/') : Astro.url.pathname.replace(`/${locale}/`, '/ja/')}`} />}
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={siteName} />
     <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'ja_JP'} />
     <meta property="og:site_name" content={siteName} />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImageUrl} />
     <title>{title}</title>
+    {
+      structuredData.map((item) => (
+        <script type="application/ld+json" set:html={JSON.stringify(item)} />
+      ))
+    }
     <slot name="head" />
   </head>
   <body class="l-body">

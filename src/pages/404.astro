@@ -9,7 +9,7 @@ const locale: Locale = pathname.startsWith('/en') ? 'en' : 'ja';
 const text = translations.meta[locale].notFound;
 ---
 
-<Layout title={text.title} description={text.description} canonicalPath={`/${locale}/`} locale={locale}>
+<Layout title={text.title} description={text.description} canonicalPath="/404" locale={locale} noindex={true}>
   <section class="p-404">
     <div class="l-container">
       <h1 class="p-404__title">{text.title.split(' | ')[0]}</h1>
