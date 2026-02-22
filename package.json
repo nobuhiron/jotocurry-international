@@ -12,7 +12,9 @@
     "astro": "astro",
     "check:type": "astro check",
     "check:build": "astro build",
-    "check:local": "pnpm check:type && pnpm check:build",
+    "check:css": "stylelint \"src/styles/**/*.css\"",
+    "fix:css": "stylelint \"src/styles/**/*.css\" --fix",
+    "check:local": "pnpm check:css && pnpm check:type && pnpm check:build",
     "check:delivery": "pnpm check:local",
     "preflight": "pnpm check:delivery"
   },
@@ -32,6 +34,8 @@
     "postcss-custom-media": "^11.0.6",
     "postcss-functions": "^4.0.2",
     "postcss-import": "^16.1.1",
-    "postcss-preset-env": "^10.4.0"
+    "postcss-preset-env": "^10.4.0",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^38.0.0"
   }
 }

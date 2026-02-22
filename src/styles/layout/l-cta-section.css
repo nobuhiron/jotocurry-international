@@ -47,8 +47,10 @@
   color: var(--color-white);
   line-height: 1.6;
   text-align: center;
+}
 
-  @media (--lg) {
+@media (--lg) {
+  .l-cta-section__title {
     font-size: clamp(28px, 3vw, 36px);
   }
 }

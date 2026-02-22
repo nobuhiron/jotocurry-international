@@ -1,76 +1,123 @@
 /**
  * Brand power carousel initialization using Splide
- * Shows approximately 4.5 slides on desktop and 3.5 on mobile
- * Continuous smooth scrolling with interval: 0
+ * Continuous marquee-like scroll with effectively zero interval.
  */
-import Splide from '@splidejs/splide';
 import '@splidejs/splide/css';
 
 export default function initBrandPower() {
   const carouselElement = document.getElementById('brand-power-carousel');
+  const track = carouselElement?.querySelector('.splide__track');
+  const list = carouselElement?.querySelector('.splide__list');
 
-  if (!carouselElement) {
+  if (!carouselElement || !track || !list) {
     return;
   }
 
-  const splide = new Splide(carouselElement, {
-    type: 'loop',
-    perPage: 4.5,
-    perMove: 1,
-    gap: '1rem',
-    pagination: false,
-    arrows: false,
-    autoplay: false,
-    speed: 10000,
-    easing: 'linear',
-    pauseOnHover: false,
-    breakpoints: {
-      768: {
-        perPage: 2.5,
-        gap: '0.75rem',
-      },
-    },
-  });
+  if (carouselElement.dataset.continuousInitialized === 'true') {
+    return;
+  }
+  carouselElement.dataset.continuousInitialized = 'true';
 
-  splide.mount();
+  carouselElement.classList.add('is-rendered');
+  carouselElement.classList.add('is-initialized');
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     return;
   }
 
-  // 連続スクロールを実装
-  let scrollPosition = 0;
-  let paused = false;
-  const scrollSpeed = 0.5; // ピクセル/フレーム
-
-  // フォーカスが当たったら一時停止（WCAG 2.2.2）
-  carouselElement.addEventListener('focusin', () => { paused = true; });
-  carouselElement.addEventListener('focusout', () => { paused = false; });
-  carouselElement.addEventListener('mouseenter', () => { paused = true; });
-  carouselElement.addEventListener('mouseleave', () => { paused = false; });
-
-  function continuousScroll() {
-    if (!paused) {
-      const track = carouselElement.querySelector('.splide__track');
-      const list = carouselElement.querySelector('.splide__list');
-
-      if (track && list) {
-        scrollPosition += scrollSpeed;
-        const listWidth = list.scrollWidth;
-        const trackWidth = track.clientWidth;
-
-        // ループ処理
-        if (scrollPosition >= listWidth - trackWidth) {
-          scrollPosition = 0;
-        }
-
-        list.style.transform = `translateX(-${scrollPosition}px)`;
-      }
-    }
-
-    requestAnimationFrame(continuousScroll);
+  const originalSlides = Array.from(list.children);
+  if (originalSlides.length === 0) {
+    return;
   }
 
-  // アニメーション開始
-  requestAnimationFrame(continuousScroll);
+  let gap = 16; // desktop: 1rem
+  let visibleSlides = 4.5;
+  list.style.display = 'flex';
+  list.style.willChange = 'transform';
+
+  let paused = false;
+  let x = 0;
+  let lastTime = 0;
+  let singleSetWidth = 0;
+  const speedPxPerSecond = 42;
+
+  function computeLayout() {
+    if (window.innerWidth <= 768) {
+      gap = 12; // mobile: 0.75rem
+      visibleSlides = 2.5;
+    } else {
+      gap = 16; // desktop: 1rem
+      visibleSlides = 4.5;
+    }
+    list.style.gap = `${gap}px`;
+  }
+
+  function setSlideWidths() {
+    const slideWidth = (track.clientWidth - gap * (visibleSlides - 1)) / visibleSlides;
+    if (!Number.isFinite(slideWidth) || slideWidth <= 0) return;
+
+    Array.from(list.children).forEach((slide) => {
+      slide.style.flex = `0 0 ${slideWidth}px`;
+      slide.style.width = `${slideWidth}px`;
+      slide.style.maxWidth = `${slideWidth}px`;
+    });
+  }
+
+  function measureSingleSetWidth() {
+    let width = 0;
+    originalSlides.forEach((slide, index) => {
+      width += slide.getBoundingClientRect().width;
+      if (index < originalSlides.length - 1) width += gap;
+    });
+    return width;
+  }
+
+  function ensureDuplicatedSlides() {
+    while (list.scrollWidth < track.clientWidth * 2) {
+      originalSlides.forEach((slide) => {
+        const clone = slide.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        list.appendChild(clone);
+      });
+    }
+  }
+
+  function setup() {
+    computeLayout();
+    setSlideWidths();
+    ensureDuplicatedSlides();
+    setSlideWidths();
+    singleSetWidth = measureSingleSetWidth();
+    if (singleSetWidth <= 0) return;
+    x = x % singleSetWidth;
+    list.style.transform = `translate3d(-${x}px, 0, 0)`;
+  }
+
+  function tick(time) {
+    if (!paused && singleSetWidth > 0) {
+      if (!lastTime) lastTime = time;
+      const dt = (time - lastTime) / 1000;
+      x += speedPxPerSecond * dt;
+      if (x >= singleSetWidth) {
+        x -= singleSetWidth;
+      }
+      list.style.transform = `translate3d(-${x}px, 0, 0)`;
+    }
+    lastTime = time;
+    requestAnimationFrame(tick);
+  }
+
+  carouselElement.addEventListener('mouseenter', () => { paused = true; });
+  carouselElement.addEventListener('mouseleave', () => { paused = false; });
+  carouselElement.addEventListener('focusin', () => { paused = true; });
+  carouselElement.addEventListener('focusout', () => { paused = false; });
+
+  const resizeObserver = new ResizeObserver(() => {
+    setup();
+  });
+  resizeObserver.observe(track);
+  originalSlides.forEach((slide) => resizeObserver.observe(slide));
+
+  setup();
+  requestAnimationFrame(tick);
 }
