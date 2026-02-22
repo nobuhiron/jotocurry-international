@@ -47,6 +47,7 @@ const altPath = canonicalPath ? canonicalPath.replace(`/${locale}/`, `/${altLoca
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
     <title>{title}</title>
+    <slot name="head" />
   </head>
   <body class="l-body">
     <a href="#main-content" class="skip-to-main">
