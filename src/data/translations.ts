@@ -995,6 +995,11 @@ export const translations = {
       cookie: {
         description: '上等カレー公式サイトのCookieの使用について。Cookieの種類と管理方法をご説明します。',
       },
+      notFound: {
+        title: 'ページが見つかりません | 上等カレー',
+        description: 'お探しのページは存在しないか、移動した可能性があります。',
+        backToTop: 'トップへ戻る',
+      },
     },
     en: {
       home: {
@@ -1015,6 +1020,11 @@ export const translations = {
       },
       cookie: {
         description: 'About the use of cookies on the Joto Curry official website. Types of cookies and how to manage them.',
+      },
+      notFound: {
+        title: 'Page Not Found | Joto Curry',
+        description: 'The page you are looking for does not exist or may have been moved.',
+        backToTop: 'Back to Top',
       },
     },
   },
