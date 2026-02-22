@@ -5,30 +5,38 @@ import { getLocalizedPath } from '../lib/i18n';
 interface Props {
   currentLocale: Locale;
   currentPath: string;
+  locale?: Locale;
 }
 
-const { currentLocale, currentPath } = Astro.props;
+const { currentLocale, currentPath, locale = currentLocale } = Astro.props;
 
 const languages = [
   { code: 'ja' as Locale, label: '日本語' },
   { code: 'en' as Locale, label: 'English' },
 ];
+
+const labels = locale === 'en'
+  ? { selectLanguage: 'Select language' }
+  : { selectLanguage: '言語を選択' };
+
+const switcherId = `language-switcher-${Math.random().toString(36).slice(2, 9)}`;
+const dropdownId = `${switcherId}-dropdown`;
 ---
 
-<div class="c-language-switcher">
+<div class="c-language-switcher" data-language-switcher={switcherId}>
   <button
     class="c-language-switcher__toggle"
     type="button"
     aria-expanded="false"
-    aria-haspopup="true"
-    aria-label="言語を選択"
+    aria-controls={dropdownId}
+    aria-label={labels.selectLanguage}
   >
     <span class="c-language-switcher__current">
       {languages.find((lang) => lang.code === currentLocale)?.label || '日本語'}
     </span>
     <span class="c-language-switcher__icon" aria-hidden="true">▼</span>
   </button>
-  <div class="c-language-switcher__dropdown">
+  <div class="c-language-switcher__dropdown" id={dropdownId}>
     <ul class="c-language-switcher__list">
       {languages.map((lang) => {
         const isActive = lang.code === currentLocale;
@@ -147,26 +155,76 @@ const languages = [
 
 <script is:inline>
   (function () {
-    if (window.__languageSwitcherInitialized) return;
-    window.__languageSwitcherInitialized = true;
+    const switchers = document.querySelectorAll('.c-language-switcher');
+    if (switchers.length === 0) return;
 
-    function closeAll(except) {
-      document.querySelectorAll('.c-language-switcher__toggle').forEach((btn) => {
-        if (btn !== except) {
-          btn.setAttribute('aria-expanded', 'false');
-        }
+    function getFocusableLinks(switcher) {
+      return Array.from(switcher.querySelectorAll('.c-language-switcher__link'));
+    }
+
+    function setOpenState(toggle, dropdown, isOpen) {
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    function closeAll(exceptToggle) {
+      document.querySelectorAll('.c-language-switcher').forEach((switcher) => {
+        const toggle = switcher.querySelector('.c-language-switcher__toggle');
+        const dropdown = switcher.querySelector('.c-language-switcher__dropdown');
+        if (!toggle || !dropdown || toggle === exceptToggle) return;
+        setOpenState(toggle, dropdown, false);
       });
     }
 
-    document.querySelectorAll('.c-language-switcher').forEach((switcher) => {
+    switchers.forEach((switcher) => {
+      if (switcher.dataset.initialized === 'true') return;
+      switcher.dataset.initialized = 'true';
+
       const toggle = switcher.querySelector('.c-language-switcher__toggle');
+      const dropdown = switcher.querySelector('.c-language-switcher__dropdown');
       if (!toggle) return;
+      if (!dropdown) return;
 
       toggle.addEventListener('click', (event) => {
         event.preventDefault();
         const isOpen = toggle.getAttribute('aria-expanded') === 'true';
         closeAll(toggle);
-        toggle.setAttribute('aria-expanded', String(!isOpen));
+        setOpenState(toggle, dropdown, !isOpen);
+      });
+
+      toggle.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowDown') return;
+        event.preventDefault();
+        closeAll(toggle);
+        setOpenState(toggle, dropdown, true);
+        const links = getFocusableLinks(switcher);
+        if (links.length > 0) {
+          links[0].focus();
+        }
+      });
+
+      dropdown.addEventListener('keydown', (event) => {
+        const links = getFocusableLinks(switcher);
+        if (links.length === 0) return;
+
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          setOpenState(toggle, dropdown, false);
+          toggle.focus();
+          return;
+        }
+
+        const currentIndex = links.findIndex((link) => link === document.activeElement);
+        if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          const nextIndex = currentIndex >= 0 ? (currentIndex + 1) % links.length : 0;
+          links[nextIndex].focus();
+        } else if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          const prevIndex = currentIndex > 0 ? currentIndex - 1 : links.length - 1;
+          links[prevIndex].focus();
+        } else if (event.key === 'Tab') {
+          setOpenState(toggle, dropdown, false);
+        }
       });
     });
 

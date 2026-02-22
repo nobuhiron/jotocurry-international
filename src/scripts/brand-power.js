@@ -40,23 +40,32 @@ export default function initBrandPower() {
 
   // 連続スクロールを実装
   let scrollPosition = 0;
+  let paused = false;
   const scrollSpeed = 0.5; // ピクセル/フレーム
 
+  // フォーカスが当たったら一時停止（WCAG 2.2.2）
+  carouselElement.addEventListener('focusin', () => { paused = true; });
+  carouselElement.addEventListener('focusout', () => { paused = false; });
+  carouselElement.addEventListener('mouseenter', () => { paused = true; });
+  carouselElement.addEventListener('mouseleave', () => { paused = false; });
+
   function continuousScroll() {
-    const track = carouselElement.querySelector('.splide__track');
-    const list = carouselElement.querySelector('.splide__list');
+    if (!paused) {
+      const track = carouselElement.querySelector('.splide__track');
+      const list = carouselElement.querySelector('.splide__list');
 
-    if (track && list) {
-      scrollPosition += scrollSpeed;
-      const listWidth = list.scrollWidth;
-      const trackWidth = track.clientWidth;
+      if (track && list) {
+        scrollPosition += scrollSpeed;
+        const listWidth = list.scrollWidth;
+        const trackWidth = track.clientWidth;
 
-      // ループ処理
-      if (scrollPosition >= listWidth - trackWidth) {
-        scrollPosition = 0;
+        // ループ処理
+        if (scrollPosition >= listWidth - trackWidth) {
+          scrollPosition = 0;
+        }
+
+        list.style.transform = `translateX(-${scrollPosition}px)`;
       }
-
-      list.style.transform = `translateX(-${scrollPosition}px)`;
     }
 
     requestAnimationFrame(continuousScroll);
