@@ -19,7 +19,7 @@
 }
 
 .p-reasons__buttons {
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
   align-items: center;
@@ -28,8 +28,8 @@
 
 @media (--md) {
   .p-reasons__buttons {
-flex-direction: row;
-justify-content: center;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
