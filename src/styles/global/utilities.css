@@ -17,10 +17,10 @@
   position: absolute;
   left: -9999px;
   top: 0;
-  z-index: 9999;
+  z-index: var(--z-skip-link);
   padding: 0.75rem 1.5rem;
-  background-color: var(--color-brown, #5c3d2e);
-  color: #fff;
+  background-color: var(--color-brown);
+  color: var(--color-white);
   font-weight: var(--fw-bold, 700);
   text-decoration: none;
   white-space: nowrap;

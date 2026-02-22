@@ -17,7 +17,7 @@ export default function initContactFaq() {
     const isFirst = index === 0;
     button.setAttribute('aria-expanded', isFirst ? 'true' : 'false');
     button.setAttribute('aria-controls', content.id);
-    content.hidden = !isFirst;
+    content.setAttribute('aria-hidden', !isFirst);
 
     // First item is already open (handled by HTML), so ensure it's properly initialized
     if (isFirst && !item.classList.contains('is-open')) {
@@ -30,7 +30,7 @@ export default function initContactFaq() {
 
       button.setAttribute('aria-expanded', String(newExpanded));
       item.classList.toggle('is-open', newExpanded);
-      content.hidden = !newExpanded;
+      content.setAttribute('aria-hidden', !newExpanded);
     });
   });
 }
