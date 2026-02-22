@@ -2,8 +2,10 @@
 import SectionTitle from '../components/SectionTitle.astro';
 import StatCard from '../components/StatCard.astro';
 import Button from '../components/Button.astro';
+import Image from 'astro/components/Image.astro';
 import placeholderImage from '../assets/images/Placeholder Image.jpg';
 import { getBrandPowerImages } from '../lib/microcms-brand-power-images';
+import { optimizeImageUrl } from '../lib/microcms';
 import { getStats } from '../lib/microcms-stats';
 import { getTranslation } from '../data/translations';
 import type { Locale } from '../lib/i18n';
@@ -32,11 +34,13 @@ try {
 
 // ブランドパワー画像を取得（フォールバック値あり）
 let brandPowerImages: Array<{ url: string; width: number; height: number }> = [];
+let isPlaceholderFallback = false;
 try {
   const imagesData = await getBrandPowerImages();
   brandPowerImages = imagesData.map((item) => item.image);
 } catch (error) {
   console.warn('microCMSからブランドパワー画像を取得できませんでした。フォールバック画像を使用します。', error);
+  isPlaceholderFallback = true;
   brandPowerImages = Array.from({ length: 6 }, () => ({
     url: placeholderImage.src,
     width: placeholderImage.width,
@@ -82,14 +86,29 @@ try {
           {brandPowerImages.map((image) => (
             <li class="splide__slide">
               <div class="p-brand-power__slide">
-                <img
-                  src={image.url}
-                  alt={slideAlt}
-                  width={image.width}
-                  height={image.height}
-                  loading="lazy"
-                  class="p-brand-power__slide-image"
-                />
+                {isPlaceholderFallback ? (
+                  <Image
+                    src={placeholderImage}
+                    alt={slideAlt}
+                    width={image.width}
+                    height={image.height}
+                    format="webp"
+                    loading="lazy"
+                    class="p-brand-power__slide-image"
+                  />
+                ) : (
+                  <img
+                    src={optimizeImageUrl(image.url, 800)}
+                    srcset={`${optimizeImageUrl(image.url, 400)} 400w, ${optimizeImageUrl(image.url, 600)} 600w, ${optimizeImageUrl(image.url, 800)} 800w`}
+                    sizes="(min-width: 1024px) 400px, 100vw"
+                    alt={slideAlt}
+                    width={image.width}
+                    height={image.height}
+                    loading="lazy"
+                    decoding="async"
+                    class="p-brand-power__slide-image"
+                  />
+                )}
               </div>
             </li>
           ))}

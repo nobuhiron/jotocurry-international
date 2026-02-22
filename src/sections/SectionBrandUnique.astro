@@ -2,9 +2,9 @@
 import SectionTitle from '../components/SectionTitle.astro';
 import { translations } from '../data/translations';
 import type { Locale } from '../lib/i18n';
-import curryLadleImage from '../assets/images/curry_ladle_1260w.jpg';
-import ingredientsImage from '../assets/images/ingredients_1260w.jpg';
-import curryPasteImage from '../assets/images/curry_paste_1260w.jpg';
+import curryLadleImage from '../assets/images/curry_ladle.jpg';
+import ingredientsImage from '../assets/images/ingredients.png';
+import curryPasteImage from '../assets/images/curry_paste.png';
 import Image from 'astro/components/Image.astro';
 interface Props {
   locale?: Locale;
@@ -33,7 +33,16 @@ const imageAlts = uniqueText.imageAlts;
                 <p class="p-brand-unique__text-block-text">{block.text}</p>
                 {images[index] && (
                   <div class="p-brand-unique__image">
-                    <Image src={images[index]} alt={imageAlts[index]} width={1260} height={709} loading="lazy" />
+                    <Image
+                    src={images[index]}
+                    alt={imageAlts[index]}
+                    width={1260}
+                    height={709}
+                    widths={[640, 1000, 1260]}
+                    sizes="(min-width: 1024px) 600px, 100vw"
+                    format="webp"
+                    loading="lazy"
+                  />
                   </div>
                 )}
               </div>
@@ -43,7 +52,16 @@ const imageAlts = uniqueText.imageAlts;
         <div class="p-brand-unique__image-column">
           {images.map((image, index) => (
             <div class="p-brand-unique__image">
-              <Image src={image} alt={imageAlts[index]} width={1260} height={709} loading="lazy" />
+              <Image
+              src={image}
+              alt={imageAlts[index]}
+              width={1260}
+              height={709}
+              widths={[640, 1000, 1260]}
+              sizes="(min-width: 1024px) 600px, 100vw"
+              format="webp"
+              loading="lazy"
+            />
             </div>
           ))}
         </div>
