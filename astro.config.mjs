@@ -5,7 +5,9 @@ export default defineConfig({
   // [lang]ディレクトリ構造でも画像パスが正しく解決されるように設定
   base: '/',
   output: 'server',
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'compile',
+  }),
   image: {
     // 店舗紹介セクションで使用するmicroCMSの画像ドメインを許可
     // 注意: サイト全体の画像はローカル/ホスティングから取得し、CMSからは取得しない
@@ -16,5 +18,12 @@ export default defineConfig({
         hostname: '**.microcms-assets.io',
       },
     ],
+    // WebP 化・圧縮（sharp がビルド時に適用）
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+      config: {
+        limitInputPixels: false,
+      },
+    },
   },
 });

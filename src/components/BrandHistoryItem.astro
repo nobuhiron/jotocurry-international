@@ -19,7 +19,17 @@ const { year, heading, description, imageSrc, imageAlt = '' } = Astro.props;
   </div>
   <div class="p-brand-history__item-content" style="padding-inline-start: var(--spacing-lg);">
     <div class="p-brand-history__item-image">
-      <Image src={imageSrc} alt={imageAlt} width={500} height={500} loading="lazy" class="p-brand-history__item-image-img" />
+      <Image
+      src={imageSrc}
+      alt={imageAlt}
+      width={1000}
+      height={750}
+      widths={[600, 1000]}
+      sizes="(min-width: 1024px) 600px, 100vw"
+      format="webp"
+      loading="lazy"
+      class="p-brand-history__item-image-img"
+    />
     </div>
     <div class="p-brand-history__item-text">
       <h3 class="p-brand-history__item-heading">{heading}</h3>

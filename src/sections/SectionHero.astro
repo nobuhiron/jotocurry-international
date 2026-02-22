@@ -16,7 +16,17 @@ const heroText = getTranslation('hero', locale);
 
 <section class="p-hero" id="section-hero">
   <div class="p-hero__image">
-          <Image src={heroImage} alt={locale === 'en' ? 'Hero image' : 'ヒーローイメージ'} width={1920} height={1080} />
+          <Image
+          src={heroImage}
+          alt={locale === 'en' ? 'Hero image' : 'ヒーローイメージ'}
+          width={7680}
+          height={4320}
+          widths={[960, 1920, 3840, 7680]}
+          sizes="100vw"
+          format="webp"
+          loading="eager"
+          fetchpriority="high"
+        />
       <div class="p-hero__overlay"></div>
   </div>
     <div class="p-hero__content">

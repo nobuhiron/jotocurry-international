@@ -18,8 +18,8 @@ const { title, subtitle, backgroundImage } = Astro.props;
         <img
           src={backgroundImage}
           alt=""
-          width="1920"
-          height="1080"
+          width="3840"
+          height="2160"
           loading="eager"
           fetchpriority="high"
           decoding="async"
@@ -29,8 +29,11 @@ const { title, subtitle, backgroundImage } = Astro.props;
         <Image
           src={backgroundImage}
           alt=""
-          width={1920}
-          height={1080}
+          width={3840}
+          height={2160}
+          widths={[960, 1920, 3840]}
+          sizes="100vw"
+          format="webp"
           loading="eager"
           fetchpriority="high"
         />

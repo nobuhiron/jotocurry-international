@@ -22,7 +22,16 @@ const supportText = translations.franchise.support[locale];
       />
       <div class="p-franchise-support__content">
         <div class="p-franchise-support__image">
-         <Image src={supportImage} alt={supportText.imageAlt} width={500} height={500} loading="lazy" />
+         <Image
+         src={supportImage}
+         alt={supportText.imageAlt}
+         width={1000}
+         height={1000}
+         widths={[600, 1000]}
+         sizes="(min-width: 1024px) 600px, 100vw"
+         format="webp"
+         loading="lazy"
+       />
         </div>
         <div class="p-franchise-support__text-blocks">
           {supportText.blocks.map((block) => (

@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "optimize:images": "node scripts/optimize-cta-bg.mjs",
+    "prebuild": "pnpm optimize:images",
     "preview": "astro preview",
     "astro": "astro",
     "check:type": "astro check",
