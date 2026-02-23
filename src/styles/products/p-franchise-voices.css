@@ -50,8 +50,10 @@
 }
 
 .p-franchise-voices__text {
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
+  font-size: fz(14, 16);
+  line-height: 1.7;
+  max-width: 65ch;
+  line-break: strict;
   color: var(--color-text);
   margin: 0;
   flex: 1;
@@ -89,8 +91,9 @@
 }
 
 .p-franchise-voices__store-name {
-  font-size: var(--font-size-base);
+  font-size: fz(14, 16);
   font-weight: var(--fw-medium);
   color: var(--color-text);
   margin: 0;
+  line-break: strict;
 }
