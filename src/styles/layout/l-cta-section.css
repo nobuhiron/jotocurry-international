@@ -69,18 +69,18 @@
 
 .l-cta-section__item {
   color: var(--color-white);
-  padding-left: var(--spacing-xl);
+  padding-inline-start: 1.2em;
   font-size: fz(16, 18);
   position: relative;
   justify-self: center;
 }
 
 .l-cta-section__item::before {
-  content: '✓';
+  content: '\2713';
   position: absolute;
   left: 0;
   top: 0;
-  font-size: 20px;
+  font-weight: var(--fw-bold);
   color: var(--color-white);
   line-height: var(--line-height-base);
 }
@@ -91,6 +91,8 @@
   color: var(--color-white);
   line-height: var(--line-height-base);
   text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
 }
 
 .l-cta-section__button {

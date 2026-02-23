@@ -8,13 +8,7 @@ export const translations = {
     ja: {
       badge: '海外フランチャイズオーナー募集中',
       title: '大阪発の<br class="is-sm">甘辛カツカレーを、<br>あなたの街で。',
-      features: [
-        '✔ 40年の実績',
-        '✔ シンプル運営',
-        '✔ 未経験からスタート可能',
-      ],
-      description:
-        'シンプルなオペレーションで展開できる<br>日本カレーのフランチャイズビジネス。',
+      features: ['40年の実績', 'シンプル運営', '未経験からスタート可能'],
       buttons: {
         primary: 'まずは無料オンライン相談',
         secondary: '詳細資料をダウンロード',
@@ -24,12 +18,10 @@ export const translations = {
       badge: 'Franchise Owners Wanted',
       title: "Osaka's Sweet & Spicy Katsu Curry,<br>in Your City.",
       features: [
-        '✔ 40 Years of Experience',
-        '✔ Simple Operations',
-        '✔ No Experience Required',
+        '40 Years of Experience',
+        'Simple Operations',
+        'No Experience Required',
       ],
-      description:
-        'A simple operation to expand<br>Japanese curry franchise business.',
       buttons: {
         primary: 'Free Online Consultation',
         secondary: 'Download Detailed Materials',
@@ -38,9 +30,9 @@ export const translations = {
   },
   about: {
     ja: {
-      title: '大阪生まれの甘辛カレーは、<br>今、世界へ広がっています。',
+      title: '大阪生まれの甘辛カレーを、世界へ',
       description:
-        '日本の食文化、特にカツカレーを世界に広めることをミッションとして、2004年に「TOKUMASA INTERNATIONAL」を設立しました。日本カレーは、寿司やラーメンに続く、世界で注目される日本の食文化です。この機会に、ぜひフランチャイズオーナーとして、あなたの街で上等カレーを展開してみませんか。',
+        '私たちは、日本の食文化――とりわけカレーの魅力を世界に広めることをミッションに、2024年に「TOKUMASA INTERNATIONAL」を設立しました。食道楽の街・大阪で培った味と運営ノウハウを、海外でも再現できる仕組みに整え、展開しています。フランチャイズオーナーとして、あなたの街で「上等カレー」を一緒に広げませんか。',
       button: 'まずは無料オンライン相談',
     },
     en: {
@@ -53,8 +45,6 @@ export const translations = {
   brandPower: {
     ja: {
       title: '数字が証明する上等カレーのブランド力',
-      description:
-        '40年で築いた確かな実績。これらの数字は、高い回転数による安定した収益と、グローバル展開による将来の成長性を裏付けています。',
       stats: {
         meals: {
           value: '5000',
@@ -75,8 +65,6 @@ export const translations = {
     },
     en: {
       title: "Numbers Prove Joto Curry's Brand Power",
-      description:
-        'Solid achievements built over 40 years. These numbers demonstrate stable revenue from high turnover and future growth potential through global expansion.',
       stats: {
         meals: {
           unit: 'meals',
@@ -103,7 +91,7 @@ export const translations = {
           number: '01',
           title: '世界的な日本カレー人気',
           description:
-            '日本カレーは、寿司やラーメンに続く成長市場として、世界中で注目されています。今こそ、この機会を逃さないでください。',
+            '寿司やラーメンに続く成長市場として、日本カレーは世界から注目を集めています。需要の追い風がある今が参入を検討するタイミングです。',
         },
         {
           number: '02',
@@ -383,39 +371,11 @@ export const translations = {
         title: '出店を決めたフランチャイズオーナーの声',
         subtitle:
           'なぜ上等カレーへの出店を決めたのか。開業前の不安や、実際の運営の手応えなどリアルな声をご紹介。',
-        testimonials: [
-          {
-            text: 'テキストテキスト',
-            storeName: '店舗名店舗名店舗名',
-          },
-          {
-            text: 'テキストテキスト',
-            storeName: '店舗名店舗名店舗名',
-          },
-          {
-            text: 'テキストテキスト',
-            storeName: '店舗名店舗名店舗名',
-          },
-        ],
       },
       en: {
         title: 'Voices from Franchise Owners Who Decided to Open',
         subtitle:
           'Why did they decide to open a Joto Curry franchise? We introduce real voices about pre-opening concerns and the actual operational feel.',
-        testimonials: [
-          {
-            text: 'Testimonial text',
-            storeName: 'Store Name Store Name',
-          },
-          {
-            text: 'Testimonial text',
-            storeName: 'Store Name Store Name',
-          },
-          {
-            text: 'Testimonial text',
-            storeName: 'Store Name Store Name',
-          },
-        ],
       },
     },
   },
@@ -425,7 +385,7 @@ export const translations = {
         title: '上等カレー - ブランド',
         heroTitle: '上等カレーとは',
         heroSubtitle:
-          '1970年代から続く大阪発のカレー専門店。伝統的な味を守りながら、時代に合わせた進化を続け、今では世界へと広がっています。',
+          '40年以上の歴史を持つ大阪発のカレー専門店。<br>伝統的な味を守りながら、時代に合わせた進化を続け、今では世界へと広がっています。',
       },
       en: {
         title: 'Joto Curry - Brand',
@@ -439,14 +399,14 @@ export const translations = {
         title: '上等カレーの起源と<br class="is-sm">味へのこだわり',
         blockTitles: [
           '原点は、一杯のカレーうどん',
-          'こだわりの素材と職人技が生む、<br class="is-sm">"上等"な味わい',
+          'こだわりの素材が生み出す<br class="is-sm">「上等」な味わい',
         ],
         paragraphs: [
           {
             text: '上等カレーを運営すると得正は、1983年に「手打ちうどん 得正」として創業。生粋のカレー愛好家でもある創業者・瀬戸口勝幸は、名物「得正カレーうどん」を生み出しました。',
           },
           {
-            text: 'この味を、もっと多くの人に、もっと手軽かつスピーディに届けたい——。その想いから、コンセプトはカレーうどんからカレーライスへと進化し、1995年、上等カレーの1号店が誕生しました。',
+            text: 'この味を、もっと多くの人に、もっと手軽に届けたい——。その想いから、コンセプトはカレーうどんからカレーライスへと進化し、1995年、上等カレーの1号店が誕生しました。',
           },
           {
             text: '厳選した国産牛、玉ねぎ、こだわりのスパイス、そしてごく一部の職人だけが知る“秘伝エキス”によって生まれる甘みとスパイスの絶妙なバランス。',
@@ -488,7 +448,7 @@ export const translations = {
           },
           {
             title: '素材と技術が生む深いコク',
-            text: '厳選した国産牛と玉ねぎ。独自ブレンドのスパイス。加圧調理と低温熟成。40年かけて完成させた製法が、他では真似できない深いコクを生み出します。この確立された製法により、未経験でも本格的な味を安定して提供できます。',
+            text: '厳選した国産牛と玉ねぎ。独自ブレンドのスパイス。加圧調理と低温熟成。40年かけて完成させた製法が、他では真似できない深いコクを生み出します。この確立された製法により、唯一無二の味を安定して提供します。',
           },
           {
             title: '三人だけが知る秘伝のエキス',
@@ -523,7 +483,7 @@ export const translations = {
             text: '上等カレーの看板メニューは「カツカレー」。サクサクの衣とコク深い甘辛ルーの組み合わせは、国や世代を問わず高い支持を集めています。',
           },
           {
-            text: '基本のカレーをベースに、複雑な仕込みは不要。トッピングや辛さ調整だけで、お客様に豊富な選択肢を提供できます。シンプルなオペレーションで、効率的な店舗運営が可能です。さらに、地域特性に合わせたオリジナルメニューの開発もサポート。あなたの店舗ならではの強みを生み出せます。',
+            text: '現地では、日本から供給するルーを温めるだけで、複雑な仕込みは不要です。トッピングや辛さの調整だけで、幅広いメニューを展開できます。さらに、地域特性に合わせたオリジナルメニューの開発もサポート。あなたの店舗ならではの強みを生み出せます。',
           },
         ],
         popularTitle: '人気メニュー紹介',
@@ -533,8 +493,16 @@ export const translations = {
             category: '定番',
             alt: 'カレーライス',
           },
-          { name: 'ほうれん草カレー', category: 'ヘルシー', alt: 'ほうれん草カレー' },
-          { name: 'エビフライカレー', category: '定番', alt: 'エビフライカレー' },
+          {
+            name: 'ほうれん草カレー',
+            category: 'ヘルシー',
+            alt: 'ほうれん草カレー',
+          },
+          {
+            name: 'エビフライカレー',
+            category: '定番',
+            alt: 'エビフライカレー',
+          },
           {
             name: 'チーズカレー',
             category: '女性人気',
@@ -575,8 +543,16 @@ export const translations = {
             category: 'Healthy',
             alt: 'Spinach Curry',
           },
-          { name: 'Shrimp Fry Curry', category: 'Classic', alt: 'Shrimp Fry Curry' },
-          { name: 'Cheese Curry', category: 'Popular with Women', alt: 'Cheese Curry' },
+          {
+            name: 'Shrimp Fry Curry',
+            category: 'Classic',
+            alt: 'Shrimp Fry Curry',
+          },
+          {
+            name: 'Cheese Curry',
+            category: 'Popular with Women',
+            alt: 'Cheese Curry',
+          },
           {
             name: 'Soft-Boiled Egg Curry',
             category: 'Classic',
@@ -668,7 +644,7 @@ export const translations = {
         title: '上等カレー - お問い合わせ',
         heroTitle: 'お問い合わせ',
         heroSubtitle:
-          'どんな小さな疑問でも、お気軽にご相談ください。海外フランチャイズ・卸・メディア取材など、こちらからお問い合わせいただけます。',
+          'どんな小さな疑問でも、お気軽にご相談ください。<br>海外フランチャイズ・卸・メディア取材など、こちらからお問い合わせいただけます。',
       },
       en: {
         title: 'Joto Curry - Contact',
@@ -720,7 +696,8 @@ export const translations = {
         },
         messages: {
           submitting: '送信中...',
-          success: 'お問い合わせありがとうございます。内容を確認次第、ご連絡いたします。',
+          success:
+            'お問い合わせありがとうございます。内容を確認次第、ご連絡いたします。',
           error: '送信に失敗しました。しばらく時間をおいて再度お試しください。',
           validationError: '入力内容に誤りがあります。ご確認ください。',
           errors: {
@@ -776,7 +753,8 @@ export const translations = {
         },
         messages: {
           submitting: 'Sending...',
-          success: 'Thank you for your inquiry. We will contact you as soon as we review your message.',
+          success:
+            'Thank you for your inquiry. We will contact you as soon as we review your message.',
           error: 'Failed to send. Please try again later.',
           validationError: 'Please check your input.',
           errors: {
@@ -797,7 +775,7 @@ export const translations = {
         subtitle:
           '初期費用やトレーニング、サポート体制など、オーナー候補の方から多く寄せられるご質問をまとめました。',
         cta: {
-          title: 'まだ質問がありますか？',
+          title: 'お気軽にご相談ください',
           text: 'こちらにないご質問も、お気軽にご相談ください。詳細について直接お話しさせていただきます。',
           button: 'お問い合わせはこちら',
         },
@@ -829,77 +807,96 @@ export const translations = {
     },
     content: {
       ja: {
-        intro: '株式会社得正（以下「当社」といいます）は、お客様の個人情報の保護を重要な責務と考え、以下のプライバシーポリシーに基づき、個人情報を適切に取り扱います。',
+        intro:
+          '株式会社得正（以下「当社」といいます）は、お客様の個人情報の保護を重要な責務と考え、以下のプライバシーポリシーに基づき、個人情報を適切に取り扱います。',
         sections: [
           {
             title: '1. 個人情報の定義',
-            content: '個人情報とは、氏名、住所、電話番号、メールアドレスなど、特定の個人を識別できる情報をいいます。',
+            content:
+              '個人情報とは、氏名、住所、電話番号、メールアドレスなど、特定の個人を識別できる情報をいいます。',
           },
           {
             title: '2. 個人情報の収集',
-            content: '当社は、お問い合わせフォームやフランチャイズ申し込みなど、お客様から直接提供いただく場合に個人情報を収集します。収集する際は、利用目的を明示し、必要最小限の範囲で収集します。',
+            content:
+              '当社は、お問い合わせフォームやフランチャイズ申し込みなど、お客様から直接提供いただく場合に個人情報を収集します。収集する際は、利用目的を明示し、必要最小限の範囲で収集します。',
           },
           {
             title: '3. 個人情報の利用目的',
-            content: '当社は、収集した個人情報を以下の目的で利用します。\n・お問い合わせへの回答\n・フランチャイズに関する情報提供\n・サービスの改善\n・法令に基づく対応',
+            content:
+              '当社は、収集した個人情報を以下の目的で利用します。\n・お問い合わせへの回答\n・フランチャイズに関する情報提供\n・サービスの改善\n・法令に基づく対応',
           },
           {
             title: '4. 個人情報の第三者提供',
-            content: '当社は、法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。',
+            content:
+              '当社は、法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。',
           },
           {
             title: '5. 個人情報の管理',
-            content: '当社は、個人情報の漏洩、滅失、毀損を防止するため、適切なセキュリティ対策を講じます。',
+            content:
+              '当社は、個人情報の漏洩、滅失、毀損を防止するため、適切なセキュリティ対策を講じます。',
           },
           {
             title: '6. 個人情報の開示・訂正・削除',
-            content: 'お客様ご本人から個人情報の開示、訂正、削除のご請求があった場合は、本人確認の上、速やかに対応いたします。',
+            content:
+              'お客様ご本人から個人情報の開示、訂正、削除のご請求があった場合は、本人確認の上、速やかに対応いたします。',
           },
           {
             title: '7. お問い合わせ',
-            content: '個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください。\n\n株式会社得正\n〒541-0052 大阪府大阪市中央区安土町3-2-16長野ビル3F\nTEL: 06-6926-8286\nEmail: kawakami@tokumasa.net',
+            content:
+              '個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください。\n\n株式会社得正\n〒541-0052 大阪府大阪市中央区安土町3-2-16長野ビル3F\nTEL: 06-6926-8286\nEmail: kawakami@tokumasa.net',
           },
           {
             title: '8. プライバシーポリシーの変更',
-            content: '当社は、必要に応じて本プライバシーポリシーを変更することがあります。変更した場合は、当ウェブサイトにて公表します。',
+            content:
+              '当社は、必要に応じて本プライバシーポリシーを変更することがあります。変更した場合は、当ウェブサイトにて公表します。',
           },
         ],
         lastUpdated: '最終更新日: 2024年1月',
       },
       en: {
-        intro: 'Tokumasa Co., Ltd. (hereinafter referred to as "the Company") considers the protection of personal information to be an important responsibility and handles personal information appropriately based on the following privacy policy.',
+        intro:
+          'Tokumasa Co., Ltd. (hereinafter referred to as "the Company") considers the protection of personal information to be an important responsibility and handles personal information appropriately based on the following privacy policy.',
         sections: [
           {
             title: '1. Definition of Personal Information',
-            content: 'Personal information refers to information that can identify a specific individual, such as name, address, phone number, and email address.',
+            content:
+              'Personal information refers to information that can identify a specific individual, such as name, address, phone number, and email address.',
           },
           {
             title: '2. Collection of Personal Information',
-            content: 'The Company collects personal information when it is directly provided by customers through inquiry forms, franchise applications, etc. When collecting, we clearly state the purpose of use and collect only the minimum necessary information.',
+            content:
+              'The Company collects personal information when it is directly provided by customers through inquiry forms, franchise applications, etc. When collecting, we clearly state the purpose of use and collect only the minimum necessary information.',
           },
           {
             title: '3. Purpose of Use of Personal Information',
-            content: 'The Company uses collected personal information for the following purposes:\n- Responding to inquiries\n- Providing information about franchises\n- Improving services\n- Responding based on laws and regulations',
+            content:
+              'The Company uses collected personal information for the following purposes:\n- Responding to inquiries\n- Providing information about franchises\n- Improving services\n- Responding based on laws and regulations',
           },
           {
             title: '4. Provision of Personal Information to Third Parties',
-            content: 'The Company will not provide personal information to third parties without the consent of the customer, except as required by law.',
+            content:
+              'The Company will not provide personal information to third parties without the consent of the customer, except as required by law.',
           },
           {
             title: '5. Management of Personal Information',
-            content: 'The Company takes appropriate security measures to prevent leakage, loss, and damage of personal information.',
+            content:
+              'The Company takes appropriate security measures to prevent leakage, loss, and damage of personal information.',
           },
           {
-            title: '6. Disclosure, Correction, and Deletion of Personal Information',
-            content: 'When a customer requests disclosure, correction, or deletion of personal information, we will respond promptly after confirming the identity.',
+            title:
+              '6. Disclosure, Correction, and Deletion of Personal Information',
+            content:
+              'When a customer requests disclosure, correction, or deletion of personal information, we will respond promptly after confirming the identity.',
           },
           {
             title: '7. Contact',
-            content: 'For inquiries regarding the handling of personal information, please contact:\n\nTokumasa Co., Ltd.\n3F Nagano Building, 3-2-16 Azuchi-cho, Chuo-ku, Osaka-shi, Osaka 541-0052, Japan\nTEL: 06-6926-8286\nEmail: kawakami@tokumasa.net',
+            content:
+              'For inquiries regarding the handling of personal information, please contact:\n\nTokumasa Co., Ltd.\n3F Nagano Building, 3-2-16 Azuchi-cho, Chuo-ku, Osaka-shi, Osaka 541-0052, Japan\nTEL: 06-6926-8286\nEmail: kawakami@tokumasa.net',
           },
           {
             title: '8. Changes to Privacy Policy',
-            content: 'The Company may change this privacy policy as necessary. Any changes will be announced on this website.',
+            content:
+              'The Company may change this privacy policy as necessary. Any changes will be announced on this website.',
           },
         ],
         lastUpdated: 'Last Updated: January 2024',
@@ -921,27 +918,33 @@ export const translations = {
     },
     content: {
       ja: {
-        intro: '当ウェブサイトでは、お客様により良いサービスを提供するためにCookieを使用しています。',
+        intro:
+          '当ウェブサイトでは、お客様により良いサービスを提供するためにCookieを使用しています。',
         sections: [
           {
             title: '1. Cookieとは',
-            content: 'Cookieとは、ウェブサイトを閲覧した際に、お客様のコンピュータやスマートフォンに保存される小さなテキストファイルです。Cookieにより、ウェブサイトはお客様のブラウザを認識し、次回訪問時により便利なサービスを提供することができます。',
+            content:
+              'Cookieとは、ウェブサイトを閲覧した際に、お客様のコンピュータやスマートフォンに保存される小さなテキストファイルです。Cookieにより、ウェブサイトはお客様のブラウザを認識し、次回訪問時により便利なサービスを提供することができます。',
           },
           {
             title: '2. 当サイトで使用するCookie',
-            content: '当サイトでは、以下の目的でCookieを使用しています。\n\n【必須Cookie】\nウェブサイトの基本的な機能を提供するために必要なCookieです。\n\n【分析Cookie】\nウェブサイトの利用状況を分析し、サービス改善に役立てるためのCookieです。Google Analyticsなどの第三者サービスを利用する場合があります。',
+            content:
+              '当サイトでは、以下の目的でCookieを使用しています。\n\n【必須Cookie】\nウェブサイトの基本的な機能を提供するために必要なCookieです。\n\n【分析Cookie】\nウェブサイトの利用状況を分析し、サービス改善に役立てるためのCookieです。Google Analyticsなどの第三者サービスを利用する場合があります。',
           },
           {
             title: '3. Cookieの管理',
-            content: 'お客様はブラウザの設定により、Cookieの受け入れを拒否したり、保存されたCookieを削除することができます。ただし、Cookieを無効にした場合、当ウェブサイトの一部機能が正常に動作しない場合があります。',
+            content:
+              'お客様はブラウザの設定により、Cookieの受け入れを拒否したり、保存されたCookieを削除することができます。ただし、Cookieを無効にした場合、当ウェブサイトの一部機能が正常に動作しない場合があります。',
           },
           {
             title: '4. 第三者Cookie',
-            content: '当サイトでは、アクセス解析やサービス改善のため、第三者が提供するサービス（Google Analytics等）を利用しています。これらのサービスは独自のCookieを使用する場合があります。',
+            content:
+              '当サイトでは、アクセス解析やサービス改善のため、第三者が提供するサービス（Google Analytics等）を利用しています。これらのサービスは独自のCookieを使用する場合があります。',
           },
           {
             title: '5. お問い合わせ',
-            content: 'Cookieの使用に関するお問い合わせは、以下までご連絡ください。\n\n株式会社得正\n〒541-0052 大阪府大阪市中央区安土町3-2-16長野ビル3F\nTEL: 06-6926-8286\nEmail: kawakami@tokumasa.net',
+            content:
+              'Cookieの使用に関するお問い合わせは、以下までご連絡ください。\n\n株式会社得正\n〒541-0052 大阪府大阪市中央区安土町3-2-16長野ビル3F\nTEL: 06-6926-8286\nEmail: kawakami@tokumasa.net',
           },
         ],
         lastUpdated: '最終更新日: 2024年1月',
@@ -951,23 +954,28 @@ export const translations = {
         sections: [
           {
             title: '1. What are Cookies?',
-            content: 'Cookies are small text files that are stored on your computer or smartphone when you browse a website. Cookies allow websites to recognize your browser and provide more convenient services on your next visit.',
+            content:
+              'Cookies are small text files that are stored on your computer or smartphone when you browse a website. Cookies allow websites to recognize your browser and provide more convenient services on your next visit.',
           },
           {
             title: '2. Cookies Used on This Site',
-            content: 'We use cookies for the following purposes:\n\n【Essential Cookies】\nCookies necessary to provide basic website functionality.\n\n【Analytics Cookies】\nCookies used to analyze website usage and improve our services. We may use third-party services such as Google Analytics.',
+            content:
+              'We use cookies for the following purposes:\n\n【Essential Cookies】\nCookies necessary to provide basic website functionality.\n\n【Analytics Cookies】\nCookies used to analyze website usage and improve our services. We may use third-party services such as Google Analytics.',
           },
           {
             title: '3. Managing Cookies',
-            content: 'You can refuse to accept cookies or delete stored cookies through your browser settings. However, if you disable cookies, some features of this website may not function properly.',
+            content:
+              'You can refuse to accept cookies or delete stored cookies through your browser settings. However, if you disable cookies, some features of this website may not function properly.',
           },
           {
             title: '4. Third-Party Cookies',
-            content: 'This site uses services provided by third parties (such as Google Analytics) for access analysis and service improvement. These services may use their own cookies.',
+            content:
+              'This site uses services provided by third parties (such as Google Analytics) for access analysis and service improvement. These services may use their own cookies.',
           },
           {
             title: '5. Contact',
-            content: 'For inquiries regarding the use of cookies, please contact:\n\nTokumasa Co., Ltd.\n3F Nagano Building, 3-2-16 Azuchi-cho, Chuo-ku, Osaka-shi, Osaka 541-0052, Japan\nTEL: 06-6926-8286\nEmail: kawakami@tokumasa.net',
+            content:
+              'For inquiries regarding the use of cookies, please contact:\n\nTokumasa Co., Ltd.\n3F Nagano Building, 3-2-16 Azuchi-cho, Chuo-ku, Osaka-shi, Osaka 541-0052, Japan\nTEL: 06-6926-8286\nEmail: kawakami@tokumasa.net',
           },
         ],
         lastUpdated: 'Last Updated: January 2024',
@@ -978,22 +986,28 @@ export const translations = {
     ja: {
       home: {
         title: '上等カレー | 海外フランチャイズオーナー募集',
-        description: '大阪発の甘辛カツカレー「上等カレー」の海外フランチャイズオーナーを募集中。40年の実績とシンプルなオペレーションで、未経験からでもスタート可能です。',
+        description:
+          '大阪発の甘辛カツカレー「上等カレー」の海外フランチャイズオーナーを募集中。40年の実績とシンプルなオペレーションで、未経験からでもスタート可能です。',
       },
       brand: {
-        description: '1970年代から続く大阪発のカレー専門店「上等カレー」のブランドストーリー。唯一無二の味づくりと世界への歩みをご紹介します。',
+        description:
+          '1970年代から続く大阪発のカレー専門店「上等カレー」のブランドストーリー。唯一無二の味づくりと世界への歩みをご紹介します。',
       },
       franchise: {
-        description: '上等カレーのフランチャイズ事業内容。安定した利益を生む4つの仕組み、充実したサポート体制、オーナーの声をご紹介します。',
+        description:
+          '上等カレーのフランチャイズ事業内容。安定した利益を生む4つの仕組み、充実したサポート体制、オーナーの声をご紹介します。',
       },
       contact: {
-        description: '上等カレーへのお問い合わせ。海外フランチャイズ・卸・メディア取材など、お気軽にご相談ください。',
+        description:
+          '上等カレーへのお問い合わせ。海外フランチャイズ・卸・メディア取材など、お気軽にご相談ください。',
       },
       privacy: {
-        description: '株式会社得正のプライバシーポリシー。個人情報の取り扱いについてご説明します。',
+        description:
+          '株式会社得正のプライバシーポリシー。個人情報の取り扱いについてご説明します。',
       },
       cookie: {
-        description: '上等カレー公式サイトのCookieの使用について。Cookieの種類と管理方法をご説明します。',
+        description:
+          '上等カレー公式サイトのCookieの使用について。Cookieの種類と管理方法をご説明します。',
       },
       notFound: {
         title: 'ページが見つかりません | 上等カレー',
@@ -1004,26 +1018,33 @@ export const translations = {
     en: {
       home: {
         title: 'Joto Curry | International Franchise Owners Wanted',
-        description: "Osaka's sweet & spicy katsu curry franchise. 40 years of experience, simple operations, and no prior experience required. Start your Joto Curry franchise today.",
+        description:
+          "Osaka's sweet & spicy katsu curry franchise. 40 years of experience, simple operations, and no prior experience required. Start your Joto Curry franchise today.",
       },
       brand: {
-        description: "Discover the brand story of Joto Curry, Osaka's curry specialty restaurant since the 1970s. Learn about our unique flavor creation and global journey.",
+        description:
+          "Discover the brand story of Joto Curry, Osaka's curry specialty restaurant since the 1970s. Learn about our unique flavor creation and global journey.",
       },
       franchise: {
-        description: "Joto Curry franchise business details. Learn about our 4 mechanisms for stable profits, comprehensive support system, and franchise owner testimonials.",
+        description:
+          'Joto Curry franchise business details. Learn about our 4 mechanisms for stable profits, comprehensive support system, and franchise owner testimonials.',
       },
       contact: {
-        description: 'Contact Joto Curry for international franchise, wholesale, media inquiries, and more. We welcome all inquiries.',
+        description:
+          'Contact Joto Curry for international franchise, wholesale, media inquiries, and more. We welcome all inquiries.',
       },
       privacy: {
-        description: 'Privacy policy of Tokumasa Co., Ltd. explaining our handling of personal information.',
+        description:
+          'Privacy policy of Tokumasa Co., Ltd. explaining our handling of personal information.',
       },
       cookie: {
-        description: 'About the use of cookies on the Joto Curry official website. Types of cookies and how to manage them.',
+        description:
+          'About the use of cookies on the Joto Curry official website. Types of cookies and how to manage them.',
       },
       notFound: {
         title: 'Page Not Found | Joto Curry',
-        description: 'The page you are looking for does not exist or may have been moved.',
+        description:
+          'The page you are looking for does not exist or may have been moved.',
         backToTop: 'Back to Top',
       },
     },
@@ -1032,10 +1053,12 @@ export const translations = {
 
 type Locale = 'ja' | 'en';
 type LocalizedSections = {
-  [K in keyof typeof translations]:
-    (typeof translations)[K] extends { ja: infer JA; en: infer EN }
-      ? { ja: JA; en: EN }
-      : never;
+  [K in keyof typeof translations]: (typeof translations)[K] extends {
+    ja: infer JA;
+    en: infer EN;
+  }
+    ? { ja: JA; en: EN }
+    : never;
 };
 
 /**
