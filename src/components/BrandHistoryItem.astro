@@ -32,7 +32,7 @@ const { year, heading, description, imageSrc, imageAlt = '' } = Astro.props;
     />
     </div>
     <div class="p-brand-history__item-text">
-      <h3 class="p-brand-history__item-heading">{heading}</h3>
+      <h3 class="p-brand-history__item-heading" set:html={heading}></h3>
       <p class="p-brand-history__item-description">{description}</p>
     </div>
   </div>

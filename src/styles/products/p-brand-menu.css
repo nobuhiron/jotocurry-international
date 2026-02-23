@@ -46,19 +46,20 @@
 .p-brand-menu__popular-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-xl);
+  gap: var(--spacing-md);
 }
 
 @media (--md) {
   .p-brand-menu__popular-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-2xl);
+    gap: var(--spacing-xl);
   }
 }
 
 @media (--lg) {
   .p-brand-menu__popular-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-2xl);
   }
 }
 
@@ -70,10 +71,6 @@
 
 .p-brand-menu__popular-card-image {
   width: 100%;
-}
-
-.p-brand-menu__popular-card-content {
-  padding-inline: var(--spacing-sm);
 }
 
 .p-brand-menu__popular-card-name {

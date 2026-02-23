@@ -47,6 +47,7 @@
   color: var(--color-white);
   line-height: 1.6;
   text-align: center;
+  text-wrap: balance;
 }
 
 @media (--lg) {
@@ -70,7 +71,7 @@
 .l-cta-section__item {
   color: var(--color-white);
   padding-inline-start: 1.2em;
-  font-size: fz(16, 18);
+  font-size: fz(14, 16);
   position: relative;
   justify-self: center;
 }
@@ -87,7 +88,7 @@
 
 .l-cta-section__text {
   font-family: var(--font-jp--sanserif);
-  font-size: fz(16, 18);
+  font-size: fz(14, 16);
   color: var(--color-white);
   line-height: var(--line-height-base);
   text-align: center;

@@ -16,9 +16,7 @@ const ctaText = getTranslation('cta', locale);
   <div class="l-container">
   <div class="l-cta-section__inner">
     <header class="l-cta-section__header">
-    <h2 class="l-cta-section__title">
-      {ctaText.title}
-    </h2>
+    <h2 class="l-cta-section__title" set:html={ctaText.title}></h2>
     <div class="l-cta-section__description">
     <ul class="l-cta-section__list">
       {ctaText.questions.map((question) => (
