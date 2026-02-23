@@ -1,4 +1,5 @@
-
+@import '../global/variables.css';
+@import '../global/custom_media.css';
 
 .p-brand-origin__content {
   display: grid;
@@ -16,7 +17,22 @@
 .p-brand-origin__block {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
   gap: var(--spacing-xl);
+}
+
+.p-brand-origin__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.p-brand-origin__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .p-brand-origin__block-title {
@@ -36,4 +52,3 @@
 
 .p-brand-origin__paragraph {
 }
-
