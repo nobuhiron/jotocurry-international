@@ -4,15 +4,6 @@
 .p-franchise-support {
 }
 
-.p-franchise-support__title {
-  text-align: center;
-}
-
-.p-franchise-support__title .c-section-title__title,
-.p-franchise-support__title .c-section-title__subtitle {
-  text-align: center;
-}
-
 .p-franchise-support__content {
   display: grid;
   grid-template-columns: 1fr;

@@ -4,19 +4,11 @@
 .p-franchise-mechanisms {
 }
 
-.p-franchise-mechanisms__title {
-  text-align: center;
-}
-
 .p-franchise-mechanisms__title .c-section-title__subtitle {
   text-align: left;
 }
 
 @media (--md) {
-  .p-franchise-mechanisms__title .c-section-title {
-    text-align: center;
-  }
-
   .p-franchise-mechanisms__title .c-section-title__subtitle {
     text-align: center;
   }
@@ -83,6 +75,7 @@
   color: var(--color-text);
   margin: 0;
   text-align: center;
+  text-wrap: balance;
 }
 
 @container (min-width: 400px) {

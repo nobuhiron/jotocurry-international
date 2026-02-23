@@ -47,6 +47,7 @@
   font-size: 24px;
   font-weight: var(--fw-bold);
   text-align: center;
+  text-wrap: balance;
 }
 
 .c-reason-card__description {

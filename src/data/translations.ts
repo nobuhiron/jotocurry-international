@@ -30,7 +30,7 @@ export const translations = {
   },
   about: {
     ja: {
-      title: '大阪生まれの甘辛カレーを、世界へ',
+      title: '大阪生まれの甘辛カレーを、<br class="is-sm">世界へ',
       description:
         '私たちは、日本の食文化――とりわけカレーの魅力を世界に広めることをミッションに、2024年に「TOKUMASA INTERNATIONAL」を設立しました。食道楽の街・大阪で培った味と運営ノウハウを、海外でも再現できる仕組みに整え、展開しています。フランチャイズオーナーとして、あなたの街で「上等カレー」を一緒に広げませんか。',
       button: 'まずは無料オンライン相談',
@@ -44,7 +44,7 @@ export const translations = {
   },
   brandPower: {
     ja: {
-      title: '数字が証明する上等カレーのブランド力',
+      title: '数字が証明する<br class="is-sm">上等カレーのブランド力',
       stats: {
         meals: {
           value: '5000',
@@ -224,7 +224,7 @@ export const translations = {
   },
   cta: {
     ja: {
-      title: 'どんな小さな疑問でも、お気軽にご相談ください。',
+      title: 'どんな小さな疑問でも、<br class="is-sm">お気軽にご相談ください。',
       questions: [
         '初期費用はどれくらい必要ですか？',
         '未経験でも運営できますか？',
@@ -264,7 +264,7 @@ export const translations = {
     },
     mechanisms: {
       ja: {
-        title: '安定した利益を生む4つの仕組み',
+        title: '安定した利益を生む<br class="is-sm">4つの仕組み',
         subtitle:
           '少人数のスタッフでも安定した売上をつくれるように、効率的で再現性の高い調理システムを構築しています。',
         cards: [
@@ -368,7 +368,7 @@ export const translations = {
     },
     voices: {
       ja: {
-        title: '出店を決めたフランチャイズオーナーの声',
+        title: '出店を決めた<br class="is-sm">フランチャイズオーナーの声',
         subtitle:
           'なぜ上等カレーへの出店を決めたのか。開業前の不安や、実際の運営の手応えなどリアルな声をご紹介。',
       },
@@ -480,7 +480,7 @@ export const translations = {
     },
     menu: {
       ja: {
-        title: '幅広いニーズに応える豊富なメニュー',
+        title: '幅広いニーズに応える<br class="is-sm">豊富なメニュー',
         paragraphs: [
           {
             text: '上等カレーの看板メニューは「カツカレー」。サクサクの衣とコク深い甘辛ルーの組み合わせは、国や世代を問わず高い支持を集めています。',
@@ -528,7 +528,7 @@ export const translations = {
         title: 'Rich Menu to Meet Diverse Needs',
         paragraphs: [
           {
-            text: "Joto Curry's signature dish is \"Katsu Curry.\" The combination of crispy breaded cutlet and rich sweet-spicy curry roux is beloved across countries and generations.",
+            text: 'Joto Curry\'s signature dish is "Katsu Curry." The combination of crispy breaded cutlet and rich sweet-spicy curry roux is beloved across countries and generations.',
           },
           {
             text: 'At local stores, simply heating the curry roux supplied from Japan is all that is needed — no complicated preparation required. A wide range of menu items can be offered just by adjusting toppings and spice levels. We also support the development of original menus tailored to regional preferences, helping create unique strengths for your store.',
@@ -575,7 +575,7 @@ export const translations = {
         title: '上等カレーの世界への歩み',
         intro:
           '40年以上の実績を持つブランドだからこそ、安定したフランチャイズ運営が可能です。1983年、大阪の小さな店舗から始まった上等カレーは、今や国内外に展開するグローバルブランドへ。この確かな成長の歴史が、あなたの成功を支えます。',
-        button: 'フランチャイズのご相談はこちら',
+        button: 'フランチャイズの<br class="is-sm">ご相談はこちら',
         timeline: [
           {
             year: '1983',
@@ -593,10 +593,10 @@ export const translations = {
           },
           {
             year: 'Now',
-            heading: '大阪から生まれた一杯は、世界各地へ。',
+            heading: '大阪から世界各地へ。',
             description:
               '現在、海外11店舗を展開中。モンゴル、タイ、カンボジアでの成功に続き、2025年以降、韓国、中国、シンガポール、インドネシア、フィリピン、カナダでの事業計画が進行中です。世界で成長し続けるブランドと共に、あなたも成功への一歩を踏み出しませんか。',
-            imageAlt: '大阪から生まれた一杯は、世界各地へ。',
+            imageAlt: '大阪から世界各地へ。',
           },
         ],
       },
@@ -774,7 +774,7 @@ export const translations = {
     },
     faq: {
       ja: {
-        title: 'フランチャイズ出店に関するよくある質問',
+        title: 'よくある質問',
         subtitle:
           '初期費用やトレーニング、サポート体制など、オーナー候補の方から多く寄せられるご質問をまとめました。',
         cta: {
@@ -784,7 +784,7 @@ export const translations = {
         },
       },
       en: {
-        title: 'Frequently Asked Questions About Franchise Store Opening',
+        title: 'Frequently Asked Questions',
         subtitle:
           'We have compiled frequently asked questions from potential owners regarding initial costs, training, support systems, and more.',
         cta: {
