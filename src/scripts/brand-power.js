@@ -1,6 +1,6 @@
 /**
- * Brand power carousel initialization using Splide
- * Continuous marquee-like scroll with effectively zero interval.
+ * Brand power carousel - カスタムマーキー（requestAnimationFrame で連続スクロール）
+ * Splide の HTML 構造を使用、JS は自前実装
  */
 import '@splidejs/splide/css';
 
@@ -9,28 +9,20 @@ export default function initBrandPower() {
   const track = carouselElement?.querySelector('.splide__track');
   const list = carouselElement?.querySelector('.splide__list');
 
-  if (!carouselElement || !track || !list) {
-    return;
-  }
+  if (!carouselElement || !track || !list) return;
 
-  if (carouselElement.dataset.continuousInitialized === 'true') {
-    return;
-  }
+  if (carouselElement.dataset.continuousInitialized === 'true') return;
   carouselElement.dataset.continuousInitialized = 'true';
 
   carouselElement.classList.add('is-rendered');
   carouselElement.classList.add('is-initialized');
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
-  }
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const originalSlides = Array.from(list.children);
-  if (originalSlides.length === 0) {
-    return;
-  }
+  if (originalSlides.length === 0) return;
 
-  let gap = 16; // desktop: 1rem
+  let gap = 16;
   let visibleSlides = 4.5;
   list.style.display = 'flex';
   list.style.willChange = 'transform';
@@ -43,10 +35,10 @@ export default function initBrandPower() {
 
   function computeLayout() {
     if (window.innerWidth <= 768) {
-      gap = 12; // mobile: 0.75rem
+      gap = 12;
       visibleSlides = 2.5;
     } else {
-      gap = 16; // desktop: 1rem
+      gap = 16;
       visibleSlides = 4.5;
     }
     list.style.gap = `${gap}px`;
@@ -55,7 +47,6 @@ export default function initBrandPower() {
   function setSlideWidths() {
     const slideWidth = (track.clientWidth - gap * (visibleSlides - 1)) / visibleSlides;
     if (!Number.isFinite(slideWidth) || slideWidth <= 0) return;
-
     Array.from(list.children).forEach((slide) => {
       slide.style.flex = `0 0 ${slideWidth}px`;
       slide.style.width = `${slideWidth}px`;
@@ -73,7 +64,11 @@ export default function initBrandPower() {
   }
 
   function ensureDuplicatedSlides() {
-    while (list.scrollWidth < track.clientWidth * 2) {
+    const minWidth = Math.max(
+      track.clientWidth * 2,
+      singleSetWidth + track.clientWidth
+    );
+    while (list.scrollWidth < minWidth) {
       originalSlides.forEach((slide) => {
         const clone = slide.cloneNode(true);
         clone.setAttribute('aria-hidden', 'true');
@@ -85,10 +80,10 @@ export default function initBrandPower() {
   function setup() {
     computeLayout();
     setSlideWidths();
-    ensureDuplicatedSlides();
-    setSlideWidths();
     singleSetWidth = measureSingleSetWidth();
     if (singleSetWidth <= 0) return;
+    ensureDuplicatedSlides();
+    setSlideWidths();
     x = x % singleSetWidth;
     list.style.transform = `translate3d(-${x}px, 0, 0)`;
   }
@@ -98,9 +93,7 @@ export default function initBrandPower() {
       if (!lastTime) lastTime = time;
       const dt = (time - lastTime) / 1000;
       x += speedPxPerSecond * dt;
-      if (x >= singleSetWidth) {
-        x -= singleSetWidth;
-      }
+      if (x >= singleSetWidth) x = x % singleSetWidth;
       list.style.transform = `translate3d(-${x}px, 0, 0)`;
     }
     lastTime = time;
@@ -112,9 +105,7 @@ export default function initBrandPower() {
   carouselElement.addEventListener('focusin', () => { paused = true; });
   carouselElement.addEventListener('focusout', () => { paused = false; });
 
-  const resizeObserver = new ResizeObserver(() => {
-    setup();
-  });
+  const resizeObserver = new ResizeObserver(() => setup());
   resizeObserver.observe(track);
   originalSlides.forEach((slide) => resizeObserver.observe(slide));
 
