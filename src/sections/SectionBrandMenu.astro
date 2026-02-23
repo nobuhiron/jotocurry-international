@@ -55,7 +55,10 @@ const menuItemImages = [
           />
           </div>
       <div class="p-brand-menu__popular">
-        <h3 class="p-brand-menu__popular-title">{menuText.popularTitle}</h3>
+        <div class="p-brand-menu__popular-header">
+          <h3 class="p-brand-menu__popular-title">{menuText.popularTitle}</h3>
+          <span class="p-brand-menu__popular-title-line" aria-hidden="true"></span>
+        </div>
         <div class="p-brand-menu__popular-grid">
           {menuText.menuItems.map((item, index) => (
             <div class="p-brand-menu__popular-card">

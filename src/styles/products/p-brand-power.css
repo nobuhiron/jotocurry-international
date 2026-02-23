@@ -7,13 +7,6 @@
 .p-brand-power__title {
 }
 
-.p-brand-power__description {
-  text-align: left;
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-  color: var(--color-text);
-}
-
 .p-brand-power__stats {
   display: grid;
   grid-template-columns: 1fr;

@@ -44,7 +44,7 @@ const { title, subtitle, backgroundImage } = Astro.props;
   <div class="l-container">
     <div class="p-page-hero__inner">
       <h1 class="p-page-hero__title">{title}</h1>
-      <p class="p-page-hero__subtitle">{subtitle}</p>
+      <p class="p-page-hero__subtitle" set:html={subtitle}></p>
     </div>
   </div>
 </section>

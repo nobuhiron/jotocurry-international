@@ -51,6 +51,7 @@
 }
 
 .p-page-hero__title {
+  font-family: var(--font-jp--serif);
   font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: var(--fw-bold);
   line-height: 1.3;

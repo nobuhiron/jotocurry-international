@@ -2,7 +2,7 @@
 @import '../global/custom_media.css';
 
 .p-about__text {
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-relaxed);
   color: var(--color-text-on_dark);
 }
 
