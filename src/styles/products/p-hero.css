@@ -32,9 +32,8 @@
 
 @media (--lg) {
   .p-hero__image {
-    height: 43.75vw;
-    max-height: 630px;
-    min-height: 450px;
+    min-height: 43.75vw;
+    max-height: 520px;
   }
 }
 
@@ -142,12 +141,13 @@
   padding-block-end: clamp(0px, 4vw, var(--spacing-5xl));
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-md);
+  gap: clamp(var(--spacing-md), 2vw, var(--spacing-xl));
 }
 
 @media (--md) {
   .p-hero__bottom-section {
     text-align: left;
+    align-content: start;
   }
 }
 
