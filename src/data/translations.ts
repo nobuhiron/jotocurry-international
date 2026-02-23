@@ -36,9 +36,9 @@ export const translations = {
       button: 'まずは無料オンライン相談',
     },
     en: {
-      title: "Osaka's Sweet & Spicy Curry is Now Spreading Worldwide.",
+      title: 'Bringing Osaka-Born Sweet & Spicy Curry to the World',
       description:
-        'With the mission of spreading Japanese food culture, especially katsu curry, to the world, we established "TOKUMASA INTERNATIONAL" in 2004. Japanese curry is a Japanese food culture that is attracting attention worldwide, following sushi and ramen. Why not take this opportunity to become a franchise owner and expand Joto Curry in your city?',
+        'With the mission of spreading the appeal of Japanese food culture — especially curry — to the world, we established "TOKUMASA INTERNATIONAL" in 2024. We have refined the flavors and operational know-how cultivated in Osaka, the city of food lovers, into a system that can be replicated overseas. Why not join us as a franchise owner and bring Joto Curry to your city?',
       button: 'Free Online Consultation',
     },
   },
@@ -115,19 +115,19 @@ export const translations = {
           number: '01',
           title: 'Global Popularity of Japanese Curry',
           description:
-            "Japanese curry is attracting attention worldwide as a growing market following sushi and ramen. Don't miss this opportunity now.",
+            'Japanese curry is attracting worldwide attention as a growing market following sushi and ramen. Now is the time to consider entering this market with the wind at your back.',
         },
         {
           number: '02',
           title: 'Simple and Efficient Operations',
           description:
-            'Small-scale, efficient operations that even inexperienced people can manage with confidence. Reduce food waste and costs to achieve stable profits.',
+            'Operations designed so that even those without experience can run the business with confidence using a small team. Minimize food waste and costs to achieve stable revenue.',
         },
         {
           number: '03',
           title: 'Maximize Revenue with Diverse Expansion',
           description:
-            'Maximize revenue through menu development tailored to local regions and product sales such as curry bread and retort products. We support you with know-how based on 40 years of experience.',
+            'Maximize revenue through region-specific menu development and retail product lines such as curry bread and ready-to-eat packets. Backed by 40 years of proven know-how.',
         },
       ],
       buttons: ['View Support System', 'View Owner Voices'],
@@ -358,9 +358,9 @@ export const translations = {
               'We conduct training programs in an environment close to actual stores, from curry making to customer service, hygiene management, and numerical management. Even those without experience in the food service industry can start with confidence.',
           },
           {
-            title: 'Ongoing Support After Opening',
+            title: 'Continuous Support Even After Opening',
             description:
-              'After opening, we provide continuous support including on-site consulting, customer acquisition strategies, menu improvement proposals, and regular sales and numerical reviews.',
+              'Even after opening, we provide ongoing support including on-site consulting, customer acquisition strategies, menu improvement proposals, and regular sales and performance reviews.',
           },
         ],
         imageAlt: 'Comprehensive Support System',
@@ -391,7 +391,7 @@ export const translations = {
         title: 'Joto Curry - Brand',
         heroTitle: 'About Joto Curry',
         heroSubtitle:
-          'A curry specialty restaurant from Osaka that has continued since the 1970s. While preserving traditional flavors, we continue to evolve with the times and have now spread worldwide.',
+          'A curry specialty restaurant from Osaka with over 40 years of history.<br>While preserving traditional flavors, we continue to evolve with the times and are now expanding worldwide.',
       },
     },
     origin: {
@@ -419,19 +419,22 @@ export const translations = {
       },
       en: {
         title: 'The Origin of Joto Curry and Our Commitment to Flavor',
-        blockTitles: ['Origin of Curry Udon', 'Popularity of Curry Udon'],
+        blockTitles: [
+          'It All Began with a Bowl of Curry Udon',
+          'Premium Flavor Born from<br class="is-sm">Carefully Selected Ingredients',
+        ],
         paragraphs: [
           {
-            text: 'The origin of Joto Curry began with curry udon. By combining traditional udon with our uniquely developed curry soup, we opened up a new world of flavors.',
+            text: 'Tokumasa, the company behind Joto Curry, was founded in 1983 as "Handmade Udon Tokumasa." Founder Katsuyuki Setoguchi, a true curry enthusiast, created the signature "Tokumasa Curry Udon."',
           },
           {
-            text: 'This curry udon was loved by many customers and became the foundation of Joto Curry.',
+            text: 'Driven by the desire to bring this flavor to more people in a more accessible way, the concept evolved from curry udon to curry rice, and in 1995, the first Joto Curry restaurant was born.',
           },
           {
-            text: 'Our commitment to flavor is passed down through the hands of experienced chefs. Carefully finishing each pot and taking time to bring out the flavors. This traditional method continues unchanged to this day.',
+            text: 'Carefully selected domestic beef, onions, specially blended spices, and a "secret extract" known only to a select few artisans create an exquisite balance of sweetness and spice.',
           },
           {
-            text: 'The curry made with care and attention is characterized by its deep flavor and rich aroma.',
+            text: 'True to its name — "Joto" meaning "premium" — Joto Curry remains committed to delivering an authentic curry experience worthy of being called first-class.',
           },
         ],
         imageAlt: 'The origin of Joto Curry',
@@ -458,19 +461,19 @@ export const translations = {
       },
       en: {
         title: 'Unique Flavor Creation',
-        imageAlts: ['Curry ladle', 'Ingredients', 'Curry paste'],
+        imageAlts: ['Curry spoon', 'Ingredients', 'Curry paste'],
         blocks: [
           {
-            title: 'Carefully Selected Spices, Made with Care',
-            text: "The secret of Joto Curry's flavor lies in carefully selected spices. Spices chosen from around the world are blended in our unique formulation. By taking time to simmer slowly, deep flavors and rich aromas are created.",
+            title: 'A Harmony of Sweetness,<br class="is-sm">Spice, and Umami',
+            text: 'A gentle sweetness on the first bite. Fragrant spices and deep umami that unfold as you eat. And a rich, lingering aftertaste. This meticulously crafted three-layered flavor profile keeps customers coming back for more.',
           },
           {
-            title: 'Perfection in 4 Sheets',
-            text: 'The recipe for Joto Curry is compiled into 4 sheets. Simple yet filled with commitment to each step. These 4 sheets are the key to achieving the same flavor at stores around the world.',
+            title: 'Deep Richness Born from Ingredients and Technique',
+            text: 'Carefully selected domestic beef and onions. A proprietary spice blend. Pressure cooking and low-temperature aging. A production method perfected over 40 years creates a deep richness that cannot be replicated elsewhere. This established method ensures consistent delivery of our one-of-a-kind flavor.',
           },
           {
-            title: 'Passed Down from Person to Person',
-            text: 'The flavor of Joto Curry is passed down not only through recipes but through the skills and passion of experienced chefs. From senior to junior, and to the next generation. This tradition continues to be passed down to this day.',
+            title: 'A Secret Extract Known Only to Three',
+            text: "The key to Joto Curry's flavor is a secret extract, carefully crafted by artisans in Osaka. The recipe is a closely guarded secret known only to three people, including the founder. This perfect harmony of sweetness, heat, and umami is the essence of Joto Curry. This strict quality control guarantees the same authentic taste at every store.",
           },
         ],
       },
@@ -525,10 +528,10 @@ export const translations = {
         title: 'Rich Menu to Meet Diverse Needs',
         paragraphs: [
           {
-            text: 'Joto Curry’s signature menu is “Katsu Curry.” The combination of crispy bread and deep sweet-spicy curry sauce is popular across countries and generations.',
+            text: "Joto Curry's signature dish is \"Katsu Curry.\" The combination of crispy breaded cutlet and rich sweet-spicy curry roux is beloved across countries and generations.",
           },
           {
-            text: 'No complicated preparation is needed based on the basic curry. You can provide customers with a rich selection of toppings and spicy adjustments. Simple operations allow for efficient store management. Additionally, we support the development of original menus tailored to local characteristics, creating unique strengths for your store.',
+            text: 'At local stores, simply heating the curry roux supplied from Japan is all that is needed — no complicated preparation required. A wide range of menu items can be offered just by adjusting toppings and spice levels. We also support the development of original menus tailored to regional preferences, helping create unique strengths for your store.',
           },
         ],
         popularTitle: 'Popular Menu',
@@ -614,14 +617,14 @@ export const translations = {
             year: '1990s',
             heading: 'Growth into a National Brand',
             description:
-              'In 1995, we began full-scale chain expansion as the curry specialty restaurant "Joto Curry." Centered in Osaka, the food-loving city, popularity spread through word of mouth among office workers, gaining high support. Featured by celebrities and media, recognition spread as "Osaka\'s Famous Curry."',
-            imageAlt: 'Born in Osaka, the Gourmet City',
+              'In 1995, we began full-scale chain expansion as the curry specialty restaurant "Joto Curry." Centered in Osaka, the city of food lovers, popularity spread through word of mouth among office workers, gaining strong support. Featured by celebrities and media, it became widely recognized as "Osaka\'s Famous Curry."',
+            imageAlt: 'Growth into a National Brand',
           },
           {
             year: 'Now',
             heading: 'A Bowl Born in Osaka Spreads Worldwide',
             description:
-              'Currently operating 11 stores overseas. Following success in Mongolia, Thailand, and Cambodia, business plans for South Korea, China, Singapore, Indonesia, the Philippines, and Canada are underway from 2025 onwards. Why not take a step toward success together with a brand that continues to grow worldwide?',
+              'Currently operating 11 stores overseas. Following success in Mongolia, Thailand, and Cambodia, expansion plans for South Korea, China, Singapore, Indonesia, the Philippines, and Canada are underway from 2025 onwards. Why not take the first step toward success with a brand that continues to grow worldwide?',
             imageAlt: 'A Bowl Born in Osaka Spreads Worldwide',
           },
         ],
@@ -748,7 +751,7 @@ export const translations = {
           messagePlaceholder:
             'Example) Please feel free to write about the country/area you are considering for opening, desired opening time, questions, etc.',
           privacy: 'Privacy Policy',
-          privacyAgree: 'I agree to the',
+          privacyAgree: 'I agree to the ',
           submit: 'Apply for Free Consultation',
         },
         messages: {
