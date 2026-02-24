@@ -3,7 +3,7 @@
 
 .l-cta-section {
   background-color: var(--color-black);
-  padding-block: var(--spacing-5xl);
+  padding-block: var(--spacing-6xl);
   background: url('/cta-bg.webp') no-repeat center center/cover;
   position: relative;
 }
@@ -24,20 +24,20 @@
 .l-cta-section__inner {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: var(--spacing-xl);
+  row-gap: var(--spacing-2xl);
   position: relative;
   z-index: 1;
 }
 @media (--lg) {
   .l-cta-section__inner {
-    row-gap: var(--spacing-3xl);
+    row-gap: var(--spacing-4xl);
   }
 }
 
 .l-cta-section__header {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: var(--spacing-lg);
+  row-gap: var(--spacing-xl);
 }
 
 .l-cta-section__title {
