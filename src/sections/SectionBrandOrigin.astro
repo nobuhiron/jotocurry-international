@@ -37,9 +37,11 @@ const originText = translations.brand.origin[locale];
           </div>
           <div class="p-brand-origin__text">
             <h3 class="p-brand-origin__block-title" set:html={originText.blockTitles[0]}></h3>
-            {originText.paragraphs.slice(0, 2).map((paragraph) => (
-              <p class="p-brand-origin__paragraph">{paragraph.text}</p>
-            ))}
+            <div class="p-brand-origin__paragraphs">
+              {originText.paragraphs.slice(0, 2).map((paragraph) => (
+                <p class="p-brand-origin__paragraph">{paragraph.text}</p>
+              ))}
+            </div>
           </div>
         </div>
         <div class="p-brand-origin__block">
@@ -57,9 +59,11 @@ const originText = translations.brand.origin[locale];
           </div>
           <div class="p-brand-origin__text">
             <h3 class="p-brand-origin__block-title" set:html={originText.blockTitles[1]}></h3>
-            {originText.paragraphs.slice(2, 4).map((paragraph) => (
-              <p class="p-brand-origin__paragraph">{paragraph.text}</p>
-            ))}
+            <div class="p-brand-origin__paragraphs">
+              {(originText.paragraphs ?? []).slice(2, 4).map((paragraph) => (
+                <p class="p-brand-origin__paragraph">{paragraph.text}</p>
+              ))}
+            </div>
           </div>
         </div>
       </div>

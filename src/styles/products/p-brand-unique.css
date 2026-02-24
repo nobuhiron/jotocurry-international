@@ -39,7 +39,13 @@
 .p-brand-unique__text-block-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
+}
+
+.p-brand-unique__text-block-paragraphs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
 }
 
 .p-brand-unique__text-block-title {
@@ -63,6 +69,7 @@
 
 .p-brand-unique__text-block-text {
   font-size: fz(16, 18);
+  margin: 0;
 }
 
 .p-brand-unique__image-column {

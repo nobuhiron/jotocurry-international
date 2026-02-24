@@ -2,7 +2,14 @@
 @import '../global/custom_media.css';
 
 .p-brand-menu__description {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
   font-size: fz(16, 18);
+}
+
+.p-brand-menu__paragraph {
+  margin: 0;
 }
 .p-brand-menu__header {
   display: grid;
@@ -66,6 +73,7 @@
 .p-brand-menu__popular-card {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
   gap: var(--spacing-sm);
 }
 
@@ -87,7 +95,6 @@
   padding-inline: var(--spacing-sm);
   border-radius: var(--radius-sm);
   margin-block-end: var(--spacing-sm);
-  min-width: 100px;
+  min-width: 80px;
   text-align: center;
 }
-

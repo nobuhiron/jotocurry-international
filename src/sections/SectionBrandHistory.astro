@@ -26,7 +26,11 @@ const historyText = translations.brand.history[locale];
         class="p-brand-history__title"
       />
       <div class="p-brand-history__intro">
-        <p class="p-brand-history__intro-text">{historyText.intro}</p>
+        <div class="p-brand-history__intro-paragraphs">
+          {(historyText.intro ?? []).map((paragraph) => (
+            <p class="p-brand-history__intro-text">{paragraph}</p>
+          ))}
+        </div>
         <div class="p-brand-history__button">
           <Button
             text={historyText.button}
@@ -43,7 +47,7 @@ const historyText = translations.brand.history[locale];
             imageAlt={item.imageAlt}
             year={item.year}
             heading={item.heading}
-            description={item.description}
+            paragraphs={item.paragraphs}
           />
         ))}
       </div>
