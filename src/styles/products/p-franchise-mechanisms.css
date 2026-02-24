@@ -4,16 +4,6 @@
 .p-franchise-mechanisms {
 }
 
-.p-franchise-mechanisms__title .c-section-title__subtitle {
-  text-align: left;
-}
-
-@media (--md) {
-  .p-franchise-mechanisms__title .c-section-title__subtitle {
-    text-align: center;
-  }
-}
-
 .p-franchise-mechanisms__cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -95,6 +85,12 @@
   .c-franchise-mechanism-card__title {
     text-align: center;
   }
+}
+
+.c-franchise-mechanism-card__paragraphs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
 }
 
 .c-franchise-mechanism-card__description {

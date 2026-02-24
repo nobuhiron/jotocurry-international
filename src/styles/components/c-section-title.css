@@ -29,4 +29,5 @@
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--color-gray);
   margin-top: var(--spacing-sm);
+  text-align: left;
 }

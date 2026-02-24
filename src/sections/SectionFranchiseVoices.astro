@@ -13,18 +13,50 @@ interface Props {
 const { locale = 'ja' } = Astro.props;
 const voicesText = translations.franchise.voices[locale];
 
-// microCMSからフランチャイズボイスを取得（失敗時はセクションを非表示）
-let testimonials: Array<{ text: string; storeName: string; image?: { url: string; width: number; height: number } }> = [];
-let showSection = false;
+// microCMSからフランチャイズボイスを取得（失敗時はフォールバックデータで表示）
+const fallbackTestimonials: Array<{ paragraphs: string[]; storeName: string }> = locale === 'ja'
+  ? [
+      { paragraphs: ['シンプルなオペレーションで、未経験からでも安心してスタートできました。'], storeName: 'モンゴル店' },
+      { paragraphs: ['味の再現性が高く、お客様からも好評です。'], storeName: 'タイ店' },
+      {
+        paragraphs: [
+          'サポート体制が充実しており、開業までスムーズに進められました。',
+          '今後も安心して運営を続けていけると感じています。',
+        ],
+        storeName: 'カンボジア店',
+      },
+    ]
+  : [
+      { paragraphs: ['The simple operations allowed us to start with confidence even without experience.'], storeName: 'Mongolia Store' },
+      { paragraphs: ['The high reproducibility of the taste has been well received by our customers.'], storeName: 'Thailand Store' },
+      {
+        paragraphs: [
+          'The comprehensive support system made the opening process smooth.',
+          'I feel confident we can continue operating with peace of mind.',
+        ],
+        storeName: 'Cambodia Store',
+      },
+    ];
+
+function textToParagraphs(text: string): string[] {
+  return text.split(/\n+/).map((p) => p.trim()).filter(Boolean);
+}
+
+let testimonials: Array<{ paragraphs: string[]; storeName: string; image?: { url: string; width: number; height: number } }> = fallbackTestimonials;
 try {
   const testimonialsData = await getTestimonials(locale);
-  testimonials = testimonialsData.map((testimonial) => ({
-    ...getLocalizedTestimonial(testimonial, locale),
-    image: testimonial.image,
-  }));
-  showSection = testimonials.length > 0;
+  if (testimonialsData.length > 0) {
+    testimonials = testimonialsData.map((testimonial) => {
+      const { text, storeName } = getLocalizedTestimonial(testimonial, locale);
+      return {
+        paragraphs: textToParagraphs(text),
+        storeName,
+        image: testimonial.image,
+      };
+    });
+  }
 } catch (error) {
-  console.warn('microCMSからフランチャイズボイスを取得できませんでした。セクションを非表示にします。', error);
+  console.warn('microCMSからフランチャイズボイスを取得できませんでした。フォールバックデータで表示します。', error);
 }
 ---
 
@@ -35,6 +67,7 @@ try {
         title={voicesText.title}
         subtitle={voicesText.subtitle}
         class="p-franchise-voices__title"
+        align="center"
       />
     </div>
   </div>
@@ -45,7 +78,11 @@ try {
           {testimonials.map((testimonial) => (
             <li class="splide__slide">
               <div class="p-franchise-voices__slide">
-                <p class="p-franchise-voices__text">{testimonial.text}</p>
+                <div class="p-franchise-voices__paragraphs">
+                  {(testimonial.paragraphs ?? []).map((paragraph) => (
+                    <p class="p-franchise-voices__text">{paragraph}</p>
+                  ))}
+                </div>
                 <div class="p-franchise-voices__profile">
                   <div class="p-franchise-voices__avatar" aria-hidden="true">
                     {testimonial.image ? (
@@ -77,9 +114,7 @@ try {
     </div>
   </div>
 </section>
-)}
 
-{showSection && (
 <script>
   import initFranchiseVoices from '../scripts/franchise-voices.js';
 
@@ -89,5 +124,4 @@ try {
     initFranchiseVoices();
   }
 </script>
-)}
 

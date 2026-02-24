@@ -30,7 +30,11 @@ const imageAlts = uniqueText.imageAlts;
             <div class="p-brand-unique__text-block">
               <div class="p-brand-unique__text-block-content">
                 <h3 class="p-brand-unique__text-block-title" set:html={block.title}></h3>
-                <p class="p-brand-unique__text-block-text">{block.text}</p>
+                <div class="p-brand-unique__text-block-paragraphs">
+                  {block.paragraphs.map((paragraph) => (
+                    <p class="p-brand-unique__text-block-text">{paragraph}</p>
+                  ))}
+                </div>
                 {images[index] && (
                   <div class="p-brand-unique__image">
                     <Image

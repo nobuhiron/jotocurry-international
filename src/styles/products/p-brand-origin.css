@@ -18,7 +18,13 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
+}
+
+@media (--lg) {
+  .p-brand-origin__block {
+    gap: var(--spacing-xl);
+  }
 }
 
 .p-brand-origin__image {
@@ -42,13 +48,20 @@
 }
 
 .p-brand-origin__text {
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-  color: var(--color-text);
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+}
+
+.p-brand-origin__paragraphs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
 }
 
 .p-brand-origin__paragraph {
+  margin: 0;
 }
