@@ -2,11 +2,11 @@
 interface Props {
   icon: string;
   title: string;
-  description: string;
+  paragraphs: string[];
   class?: string;
 }
 
-const { icon, title, description, class: className = '' } = Astro.props;
+const { icon, title, paragraphs, class: className = '' } = Astro.props;
 ---
 
 <div class={`c-franchise-mechanism-card ${className}`}>
@@ -14,6 +14,10 @@ const { icon, title, description, class: className = '' } = Astro.props;
     <div class="c-franchise-mechanism-card__icon" aria-hidden="true" set:html={icon} />
     <h3 class="c-franchise-mechanism-card__title">{title}</h3>
   </div>
-  <p class="c-franchise-mechanism-card__description">{description}</p>
+  <div class="c-franchise-mechanism-card__paragraphs">
+    {(paragraphs ?? []).map((paragraph) => (
+      <p class="c-franchise-mechanism-card__description">{paragraph}</p>
+    ))}
+  </div>
 </div>
 

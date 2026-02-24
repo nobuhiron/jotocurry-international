@@ -270,23 +270,29 @@ export const translations = {
         cards: [
           {
             title: 'シンプルな調理で味の再現性を担保',
-            description:
-              '厨房設備投資や店舗スタッフへの負担を軽減できるシンプルで再現性のある調理と提供手順。ブランドの魂である『秘伝のエキス』を調合したルーは、セントラルキッチンから完璧な状態で供給されます。店舗では温めるだけで、どの国でもブレない最高品質の味を再現できます。',
+            paragraphs: [
+              '厨房設備投資や店舗スタッフへの負担を軽減できるシンプルで再現性のある調理と提供手順。ブランドの魂である『秘伝のエキス』を調合したルーは、セントラルキッチンから完璧な状態で供給されます。',
+              '店舗では温めるだけで、どの国でもブレない最高品質の味を再現できます。',
+            ],
           },
           {
             title: '高回転運営で売上最大化',
-            description:
+            paragraphs: [
               'オーダーから提供までがハイスピードで可能なため、ランチタイムなどのピーク時でも回転率を上げることができます。席数が限られた立地でも、売上最大化を狙えるオペレーションです。',
+            ],
           },
           {
             title: '少ないロスで収益性向上',
-            description:
+            paragraphs: [
               '廃棄物の量も少ないため、原価管理がしやすく、収益性の向上にもつながります。売上だけでなく利益額を見通しやすくなることで、安心して出店計画や設備投資を検討いただけます。',
+            ],
           },
           {
             title: '現地メニュー開発でリピート獲得',
-            description:
-              '現地の嗜好に合わせたオリジナルメニューの開発が可能です。既存メニューとの差別化や季節限定商品として、リピート促進にも活用いただけます。要望に応じて、日本の人気メニューのレシピについても共有します。',
+            paragraphs: [
+              '現地の嗜好に合わせたオリジナルメニューの開発が可能です。既存メニューとの差別化や季節限定商品として、リピート促進にも活用いただけます。',
+              '要望に応じて、日本の人気メニューのレシピについても共有します。',
+            ],
           },
         ],
       },
@@ -297,23 +303,29 @@ export const translations = {
         cards: [
           {
             title: 'Guaranteed Taste Reproducibility with Simple Cooking',
-            description:
-              'Simple and reproducible cooking and serving procedures that reduce the burden of kitchen equipment investment and store staff. The roux blended with the "secret extract," the soul of the brand, is supplied from the central kitchen in perfect condition. At the store, just by heating it, you can reproduce the highest quality taste that never varies in any country.',
+            paragraphs: [
+              'Simple and reproducible cooking and serving procedures that reduce the burden of kitchen equipment investment and store staff. The roux blended with the "secret extract," the soul of the brand, is supplied from the central kitchen in perfect condition.',
+              'At the store, just by heating it, you can reproduce the highest quality taste that never varies in any country.',
+            ],
           },
           {
             title: 'Maximize Sales with High Turnover Operations',
-            description:
+            paragraphs: [
               'Since orders can be served at high speed, turnover can be increased even during peak times such as lunch hours. This is an operation that can maximize sales even in locations with limited seating.',
+            ],
           },
           {
             title: 'Improved Profitability with Low Waste',
-            description:
+            paragraphs: [
               'Since the amount of waste is also small, cost management is easier, leading to improved profitability. By making it easier to forecast not only sales but also profit amounts, you can consider store opening plans and equipment investments with confidence.',
+            ],
           },
           {
             title: 'Repeat Customers with Local Menu Development',
-            description:
-              'It is possible to develop original menus tailored to local preferences. You can use them to differentiate from existing menus or as seasonal limited products to promote repeat customers. We also share recipes for popular Japanese menus upon request.',
+            paragraphs: [
+              'It is possible to develop original menus tailored to local preferences. You can use them to differentiate from existing menus or as seasonal limited products to promote repeat customers.',
+              'We also share recipes for popular Japanese menus upon request.',
+            ],
           },
         ],
       },
@@ -447,15 +459,24 @@ export const translations = {
         blocks: [
           {
             title: '甘み、スパイス、旨みが織りなす<br class="is-sm">ハーモニー',
-            text: 'ひと口目のやさしい甘み。食べ進めるほどに広がる香り高いスパイスと深い旨み。そして最後に残る、豊かな余韻。計算し尽くされた三層の味わいが、お客様の「また食べたい」を生み出します。',
+            paragraphs: [
+              'ひと口目のやさしい甘み。食べ進めるほどに広がる香り高いスパイスと深い旨み。そして最後に残る、豊かな余韻。',
+              '計算し尽くされた三層の味わいが、お客様の「また食べたい」を生み出します。',
+            ],
           },
           {
             title: '素材と技術が生む深いコク',
-            text: '厳選した国産牛と玉ねぎ。独自ブレンドのスパイス。加圧調理と低温熟成。40年かけて完成させた製法が、他では真似できない深いコクを生み出します。この確立された製法により、唯一無二の味を安定して提供します。',
+            paragraphs: [
+              '厳選した国産牛と玉ねぎ。独自ブレンドのスパイス。加圧調理と低温熟成。40年かけて完成させた製法が、他では真似できない深いコクを生み出します。',
+              'この確立された製法により、唯一無二の味を安定して提供します。',
+            ],
           },
           {
             title: '三人だけが知る秘伝のエキス',
-            text: '上等カレーの味の決め手となるのは、大阪で職人の手により丁寧に作られる秘伝のエキスです。そのレシピは創業者を含むわずか三人だけが知る門外不出のもの。甘み・辛み・旨みが絶妙に調和したこの味こそが、上等カレーの真髄です。この厳格な品質管理が、すべての店舗で変わらぬ本物の味を保証します。',
+            paragraphs: [
+              '上等カレーの味の決め手となるのは、大阪で職人の手により丁寧に作られる秘伝のエキスです。そのレシピは創業者を含むわずか三人だけが知る門外不出のもの。',
+              '甘み・辛み・旨みが絶妙に調和したこの味こそが、上等カレーの真髄です。この厳格な品質管理が、すべての店舗で変わらぬ本物の味を保証します。',
+            ],
           },
         ],
       },
@@ -465,15 +486,24 @@ export const translations = {
         blocks: [
           {
             title: 'A Harmony of Sweetness,<br class="is-sm">Spice, and Umami',
-            text: 'A gentle sweetness on the first bite. Fragrant spices and deep umami that unfold as you eat. And a rich, lingering aftertaste. This meticulously crafted three-layered flavor profile keeps customers coming back for more.',
+            paragraphs: [
+              'A gentle sweetness on the first bite. Fragrant spices and deep umami that unfold as you eat. And a rich, lingering aftertaste.',
+              'This meticulously crafted three-layered flavor profile keeps customers coming back for more.',
+            ],
           },
           {
             title: 'Deep Richness Born from Ingredients and Technique',
-            text: 'Carefully selected domestic beef and onions. A proprietary spice blend. Pressure cooking and low-temperature aging. A production method perfected over 40 years creates a deep richness that cannot be replicated elsewhere. This established method ensures consistent delivery of our one-of-a-kind flavor.',
+            paragraphs: [
+              'Carefully selected domestic beef and onions. A proprietary spice blend. Pressure cooking and low-temperature aging. A production method perfected over 40 years creates a deep richness that cannot be replicated elsewhere.',
+              'This established method ensures consistent delivery of our one-of-a-kind flavor.',
+            ],
           },
           {
             title: 'A Secret Extract Known Only to Three',
-            text: "The key to Joto Curry's flavor is a secret extract, carefully crafted by artisans in Osaka. The recipe is a closely guarded secret known only to three people, including the founder. This perfect harmony of sweetness, heat, and umami is the essence of Joto Curry. This strict quality control guarantees the same authentic taste at every store.",
+            paragraphs: [
+              "The key to Joto Curry's flavor is a secret extract, carefully crafted by artisans in Osaka. The recipe is a closely guarded secret known only to three people, including the founder.",
+              'This perfect harmony of sweetness, heat, and umami is the essence of Joto Curry. This strict quality control guarantees the same authentic taste at every store.',
+            ],
           },
         ],
       },
@@ -573,58 +603,72 @@ export const translations = {
     history: {
       ja: {
         title: '上等カレーの世界への歩み',
-        intro:
-          '40年以上の実績を持つブランドだからこそ、安定したフランチャイズ運営が可能です。1983年、大阪の小さな店舗から始まった上等カレーは、今や国内外に展開するグローバルブランドへ。この確かな成長の歴史が、あなたの成功を支えます。',
+        intro: [
+          '40年以上の実績を持つブランドだからこそ、安定したフランチャイズ運営が可能です。',
+          '1983年、大阪の小さな店舗から始まった上等カレーは、今や国内外に展開するグローバルブランドへ。この確かな成長の歴史が、あなたの成功を支えます。',
+        ],
         button: 'フランチャイズの<br class="is-sm">ご相談はこちら',
         timeline: [
           {
             year: '1983',
             heading: 'グルメの街。大阪で誕生',
-            description:
+            paragraphs: [
               '食の都・大阪で「手打ちうどん 得正」として創業。創業者のこだわりが生んだカレーうどんが評判を呼び、カレー専門店への展開を決意。',
+            ],
             imageAlt: 'グルメの街。大阪で誕生',
           },
           {
             year: '1990s',
             heading: 'ナショナルブランドへと成長',
-            description:
-              '1995年、カレー専門店「上等カレー」として本格的なチェーン展開を開始。食道楽の街、大阪を中心にオフィスワーカーから口コミで人気が広がり高い支持を獲得。著名人やメディアにも取り上げられ、「大阪の名物カレー」として認知が広がりました。',
+            paragraphs: [
+              '1995年、カレー専門店「上等カレー」として本格的なチェーン展開を開始。食道楽の街、大阪を中心にオフィスワーカーから口コミで人気が広がり高い支持を獲得。',
+              '著名人やメディアにも取り上げられ、「大阪の名物カレー」として認知が広がりました。',
+            ],
             imageAlt: 'グルメの街。大阪で誕生',
           },
           {
             year: 'Now',
             heading: '大阪から世界各地へ',
-            description:
-              '現在、海外11店舗を展開中。モンゴル、タイ、カンボジアでの成功に続き、2025年以降、韓国、中国、シンガポール、インドネシア、フィリピン、カナダでの事業計画が進行中です。世界で成長し続けるブランドと共に、あなたも成功への一歩を踏み出しませんか。',
+            paragraphs: [
+              '現在、海外11店舗を展開中。モンゴル、タイ、カンボジアでの成功に続き、2025年以降、韓国、中国、シンガポール、インドネシア、フィリピン、カナダでの事業計画が進行中です。',
+              '世界で成長し続けるブランドと共に、あなたも成功への一歩を踏み出しませんか。',
+            ],
             imageAlt: '大阪から世界各地へ',
           },
         ],
       },
       en: {
         title: "Joto Curry's Journey to the World",
-        intro:
-          'With over 40 years of experience, stable franchise operations are possible. Joto Curry, which started as a small shop in Osaka in 1983, has now grown into a global brand expanding both domestically and internationally. This steady growth history supports your success.',
+        intro: [
+          'With over 40 years of experience, stable franchise operations are possible.',
+          'Joto Curry, which started as a small shop in Osaka in 1983, has now grown into a global brand expanding both domestically and internationally. This steady growth history supports your success.',
+        ],
         button: 'Consultation for Franchise',
         timeline: [
           {
             year: '1983',
             heading: 'Born in Osaka, the Gourmet City',
-            description:
+            paragraphs: [
               'Established in Osaka, the food capital, as "Handmade Udon Tokumasa." The curry udon created by the founder\'s commitment gained popularity, leading to the decision to expand into a curry specialty restaurant.',
+            ],
             imageAlt: 'Born in Osaka, the Gourmet City',
           },
           {
             year: '1990s',
             heading: 'Growth into a National Brand',
-            description:
-              'In 1995, we began full-scale chain expansion as the curry specialty restaurant "Joto Curry." Centered in Osaka, the city of food lovers, popularity spread through word of mouth among office workers, gaining strong support. Featured by celebrities and media, it became widely recognized as "Osaka\'s Famous Curry."',
+            paragraphs: [
+              'In 1995, we began full-scale chain expansion as the curry specialty restaurant "Joto Curry." Centered in Osaka, the city of food lovers, popularity spread through word of mouth among office workers, gaining strong support.',
+              'Featured by celebrities and media, it became widely recognized as "Osaka\'s Famous Curry."',
+            ],
             imageAlt: 'Growth into a National Brand',
           },
           {
             year: 'Now',
             heading: 'A Bowl Born in Osaka Spreads Worldwide',
-            description:
-              'Currently operating 11 stores overseas. Following success in Mongolia, Thailand, and Cambodia, expansion plans for South Korea, China, Singapore, Indonesia, the Philippines, and Canada are underway from 2025 onwards. Why not take the first step toward success with a brand that continues to grow worldwide?',
+            paragraphs: [
+              'Currently operating 11 stores overseas. Following success in Mongolia, Thailand, and Cambodia, expansion plans for South Korea, China, Singapore, Indonesia, the Philippines, and Canada are underway from 2025 onwards.',
+              'Why not take the first step toward success with a brand that continues to grow worldwide?',
+            ],
             imageAlt: 'A Bowl Born in Osaka Spreads Worldwide',
           },
         ],

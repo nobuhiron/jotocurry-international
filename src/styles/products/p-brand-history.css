@@ -12,7 +12,7 @@
 .p-brand-history__intro {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
 }
 
 @media (--lg) {
@@ -21,6 +21,12 @@
     align-items: start;
     gap: var(--spacing-2xl);
   }
+}
+
+.p-brand-history__intro-paragraphs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
 }
 
 .p-brand-history__intro-text {
@@ -173,6 +179,9 @@
 }
 
 .p-brand-history__item-text {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--color-text);
@@ -182,8 +191,13 @@
   font-size: clamp(1.125rem, 2.5vw, 1.25rem);
   font-weight: var(--fw-bold);
   color: var(--color-text);
-  margin-block-end: var(--spacing-md);
-  margin-block-start: 0;
+  margin: 0;
+}
+
+.p-brand-history__item-paragraphs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
 }
 
 .p-brand-history__item-description {

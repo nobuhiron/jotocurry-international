@@ -5,12 +5,12 @@ import Image from 'astro/components/Image.astro';
 interface Props {
   year: string;
   heading: string;
-  description: string;
+  paragraphs: string[];
   imageSrc: ImageMetadata;
   imageAlt?: string;
 }
 
-const { year, heading, description, imageSrc, imageAlt = '' } = Astro.props;
+const { year, heading, paragraphs, imageSrc, imageAlt = '' } = Astro.props;
 ---
 
 <div class="p-brand-history__item">
@@ -33,7 +33,11 @@ const { year, heading, description, imageSrc, imageAlt = '' } = Astro.props;
     </div>
     <div class="p-brand-history__item-text">
       <h3 class="p-brand-history__item-heading" set:html={heading}></h3>
-      <p class="p-brand-history__item-description">{description}</p>
+      <div class="p-brand-history__item-paragraphs">
+        {(paragraphs ?? []).map((paragraph) => (
+          <p class="p-brand-history__item-description">{paragraph}</p>
+        ))}
+      </div>
     </div>
   </div>
 </div>
