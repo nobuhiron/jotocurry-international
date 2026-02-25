@@ -19,7 +19,7 @@
 
 .c-button[data-variant='primary'] {
   background-color: var(--color-accent-warm);
-  color: var(--color-white);
+  color: var(--color-text-on_dark);
   font-family: var(--font-jp--sanserif);
   font-weight: var(--fw-medium);
   border: none;

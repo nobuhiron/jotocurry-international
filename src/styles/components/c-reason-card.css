@@ -10,7 +10,7 @@
 .c-reason-card__badge {
   display: inline-block;
   background-color: var(--color-accent-warm);
-  color: var(--color-white);
+  color: var(--color-text-on_dark);
   border-radius: var(--radius-full);
   padding-block: var(--spacing-sm);
   padding-inline: var(--spacing-md);

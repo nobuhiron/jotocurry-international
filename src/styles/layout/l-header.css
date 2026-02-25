@@ -2,7 +2,7 @@
 @import '../global/custom_media.css';
 
 .l-header {
-  background-color: var(--color-white);
+  background-color: var(--color-bg-surface);
   position: sticky;
   top: 0;
   z-index: var(--z-header);
@@ -103,8 +103,8 @@
   top: 100%;
   right: 0;
   margin-block-start: var(--spacing-xs);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-light-gray);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-sm);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 120px;
@@ -130,7 +130,7 @@
   display: block;
   padding-block: var(--spacing-sm);
   padding-inline: var(--spacing-md);
-  color: var(--color-black);
+  color: var(--color-text);
   font-family: var(--font-jp--sanserif);
   font-size: var(--font-size-base);
   transition: background-color 0.2s ease;
@@ -182,7 +182,7 @@
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: var(--color-black);
+  background-color: var(--color-text);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -252,7 +252,7 @@
   width: 100%;
   max-width: 400px;
   height: 100vh;
-  background-color: var(--color-white);
+  background-color: var(--color-bg-surface);
   z-index: var(--z-header);
   transform: translateX(-100%);
   transition: transform 0.3s ease;
@@ -284,7 +284,7 @@
   justify-content: space-between;
   margin-block-end: var(--spacing-3xl);
   padding-block-end: var(--spacing-lg);
-  border-bottom: 1px solid var(--color-light-gray);
+  border-bottom: 1px solid var(--color-border-strong);
 }
 
 .l-header__mobile-menu-logo {
@@ -309,7 +309,7 @@
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  color: var(--color-black);
+  color: var(--color-text);
   line-height: 1;
 }
 
@@ -324,7 +324,7 @@
 }
 
 .l-header__mobile-nav-link {
-  color: var(--color-black);
+  color: var(--color-text);
   font-family: var(--font-jp--sanserif);
   font-size: var(--font-size-base);
   font-weight: var(--fw-medium);
@@ -349,7 +349,7 @@
   width: 100%;
   background: none;
   border: none;
-  color: var(--color-black);
+  color: var(--color-text);
   font-family: var(--font-jp--sanserif);
   font-size: var(--font-size-base);
   font-weight: var(--fw-medium);
@@ -383,7 +383,7 @@
   display: block;
   padding-block: var(--spacing-sm);
   padding-inline: var(--spacing-md);
-  color: var(--color-black);
+  color: var(--color-text);
   font-family: var(--font-jp--sanserif);
   font-size: var(--font-size-base);
   transition: background-color 0.2s ease;

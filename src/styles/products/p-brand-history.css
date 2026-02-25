@@ -5,7 +5,7 @@
 }
 
 .p-brand-history__inner {
-  background-color: var(--color-white);
+  background-color: var(--color-bg-surface);
   padding: var(--spacing-2xl);
 }
 
@@ -109,7 +109,7 @@
   height: 12px;
   background-color: var(--color-accent-warm);
   border-radius: var(--radius-xl);
-  border: 2px solid var(--color-white);
+  border: 2px solid var(--color-bg-surface);
   /* ドットの中心を線の中心に合わせる */
   /* 線は left: 6px, width: 2px なので中心は 7px */
   /* ドットは width: 12px なので、左端を 1px にする */
