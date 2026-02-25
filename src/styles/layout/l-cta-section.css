@@ -44,7 +44,7 @@
   font-family: var(--font-jp--serif);
   font-size: clamp(20px, 4vw, 32px);
   font-weight: var(--fw-bold);
-  color: var(--color-white);
+  color: var(--color-text-on_dark);
   line-height: 1.6;
   text-align: center;
   text-wrap: balance;
@@ -69,7 +69,7 @@
 }
 
 .l-cta-section__item {
-  color: var(--color-white);
+  color: var(--color-text-on_dark);
   padding-inline-start: 1.2em;
   font-size: fz(14, 16);
   position: relative;
@@ -82,14 +82,14 @@
   left: 0;
   top: 0;
   font-weight: var(--fw-bold);
-  color: var(--color-white);
+  color: var(--color-text-on_dark);
   line-height: var(--line-height-base);
 }
 
 .l-cta-section__text {
   font-family: var(--font-jp--sanserif);
   font-size: fz(14, 16);
-  color: var(--color-white);
+  color: var(--color-text-on_dark);
   line-height: var(--line-height-base);
   text-align: center;
   text-decoration: underline;

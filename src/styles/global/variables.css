@@ -28,6 +28,7 @@
   --color-accent-warm: var(--color-pale-orange);
   --color-accent-cool: var(--color-pale-blue);
   --color-border-strong: var(--color-light-gray);
+  --color-border-muted: var(--color-gray);
 }
 
 /* -------------------

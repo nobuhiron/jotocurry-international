@@ -12,7 +12,7 @@
 }
 
 .p-contact-faq__item {
-  background-color: var(--color-white);
+  background-color: var(--color-bg-surface);
   border-radius: var(--radius-sm);
   overflow: hidden;
   transition: box-shadow 0.2s ease;
@@ -37,7 +37,7 @@
 }
 
 .p-contact-faq__button:hover {
-  background-color: var(--color-white);
+  background-color: var(--color-bg-surface);
 }
 
 .p-contact-faq__button:focus-visible {
@@ -47,7 +47,7 @@
 
 .p-contact-faq__question {
   font-weight: var(--fw-semibold);
-  color: var(--color-black);
+  color: var(--color-text);
   flex: 1;
 }
 
@@ -67,7 +67,7 @@
   position: absolute;
   font-size: 1.5rem;
   line-height: 1;
-  color: var(--color-gray);
+  color: var(--color-text-muted);
   transition: opacity 0.2s ease, color 0.2s ease;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .p-contact-faq__answer {
-  color: var(--color-black);
+  color: var(--color-text);
   margin: 0;
   padding-block-start: var(--spacing-md);
 }
@@ -120,12 +120,12 @@
   font-weight: var(--fw-bold);
   line-height: 1.4;
   margin: 0;
-  color: var(--color-black);
+  color: var(--color-text);
 }
 
 .p-contact-faq__cta-text {
   margin: 0;
-  color: var(--color-black);
+  color: var(--color-text);
 }
 
 .p-contact-faq__cta-button {

@@ -7,7 +7,7 @@
 
 /* 背景色のバリエーション（データ属性で制御） */
 .l-section[data-bg="white"] {
-  background-color: var(--color-white);
+  background-color: var(--color-bg-surface);
 }
 
 .l-section[data-bg="alt"] {

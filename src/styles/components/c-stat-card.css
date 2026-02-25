@@ -25,6 +25,6 @@
 
 .c-stat-card__label {
   font-size: var(--font-size-base);
-  color: var(--color-gray);
+  color: var(--color-text-muted);
   line-height: 1.5;
 }
