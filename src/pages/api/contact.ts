@@ -168,7 +168,7 @@ export const POST: APIRoute = async ({ request }) => {
     // Resend APIでメール送信
     const { data: emailData, error } = await resend.emails.send({
       from: 'onboarding@resend.dev', // Resendのデフォルト送信元（本番では独自ドメインに変更）
-      to: CONTACT_EMAIL_TO,
+      to: CONTACT_EMAIL_TO.split(',').map((email: string) => email.trim()),
       subject: emailSubject,
       text: emailBody,
     });
