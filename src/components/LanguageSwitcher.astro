@@ -108,23 +108,6 @@ const dropdownId = `${switcherId}-dropdown`;
     transform: translateY(0);
   }
 
-  /* モバイルメニュー内はトグル直下に表示して、画面外にはみ出さないようにする */
-  .l-header__mobile-language .c-language-switcher__dropdown {
-    top: calc(100% + 0.5rem);
-    right: 0;
-    left: auto;
-    margin-top: 0;
-    margin-left: 0;
-    min-width: 100%;
-    transform: translateY(-10px);
-  }
-
-  .l-header__mobile-language
-    .c-language-switcher__toggle[aria-expanded='true']
-    + .c-language-switcher__dropdown {
-    transform: translateY(0);
-  }
-
   .c-language-switcher__list {
     list-style: none;
     margin: 0;
