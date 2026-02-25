@@ -27,9 +27,14 @@
   transition: z-index 0s;
 }
 
-/* モバイルメニューが開いている時はロゴを下のレイヤーに */
+/* モバイルメニューが開いている時はロゴを下のレイヤーに、ハンバーガーは非表示 */
 .l-header:has(.l-header__mobile-menu.is-open) .l-header__logo {
   z-index: var(--z-header-logo-lower);
+}
+
+.l-header:has(.l-header__mobile-menu.is-open) .l-header__menu-toggle {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* Navigation */
@@ -154,6 +159,7 @@
 
 /* Mobile Menu Toggle */
 .l-header__menu-toggle {
+  align-self: flex-end;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -340,6 +346,24 @@
 
 .l-header__mobile-language {
   margin-block-end: var(--spacing-3xl);
+}
+
+/* モバイル: 言語ドロップダウンをボタン直下・左揃えで表示（画面外にはみ出さない） */
+.l-header__mobile-language .c-language-switcher__dropdown {
+  top: 100%;
+  left: 0;
+  right: auto;
+  margin-top: var(--spacing-xs);
+  margin-left: 0;
+  min-width: 120px;
+  max-width: 200px;
+  transform: translateY(-8px);
+}
+
+.l-header__mobile-language
+  .c-language-switcher__toggle[aria-expanded='true']
+  + .c-language-switcher__dropdown {
+  transform: translateY(0);
 }
 
 .l-header__mobile-language-toggle {
