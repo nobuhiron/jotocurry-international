@@ -96,6 +96,5 @@
   font-size: fz(14, 16);
   font-weight: var(--fw-medium);
   color: var(--color-text);
-  margin: 0;
   line-break: strict;
 }
