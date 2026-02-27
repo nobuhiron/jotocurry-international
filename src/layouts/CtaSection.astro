@@ -13,26 +13,34 @@ const ctaText = getTranslation('cta', locale);
 ---
 
 <section class="l-cta-section">
-  <div class="l-container">
-  <div class="l-cta-section__inner">
-    <header class="l-cta-section__header">
-    <h2 class="l-cta-section__title" set:html={ctaText.title}></h2>
-    <div class="l-cta-section__description">
-    <ul class="l-cta-section__list">
-      {ctaText.questions.map((question) => (
-        <li class="l-cta-section__item">
-          {question}
-        </li>
-      ))}
-    </ul>
-    <p class="l-cta-section__text">
-      {ctaText.text}
-    </p>
+  <div class="l-cta-section__grid">
+    <div class="l-cta-section__image-area">
+      <img src="/cta-bg.webp" alt="" class="l-cta-section__image" width={3008} height={2000} />
+      <div class="l-cta-section__image-overlay" aria-hidden="true"></div>
     </div>
-    </header>
-    <div class="l-cta-section__button">
-      <Button text={ctaText.button} variant="primary" href={getLocalizedPath('/contact#section-contact-form', locale)} />
-    </div>
+    <div class="l-cta-section__content">
+      <div class="l-container">
+        <div class="l-cta-section__inner">
+          <header class="l-cta-section__header">
+            <h2 class="l-cta-section__title" set:html={ctaText.title}></h2>
+            <div class="l-cta-section__description">
+              <ul class="l-cta-section__list">
+                {ctaText.questions.map((question) => (
+                  <li class="l-cta-section__item">
+                    {question}
+                  </li>
+                ))}
+              </ul>
+              <p class="l-cta-section__text">
+                {ctaText.text}
+              </p>
+            </div>
+          </header>
+          <div class="l-cta-section__button">
+            <Button text={ctaText.button} variant="primary" href={getLocalizedPath('/contact#section-contact-form', locale)} />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

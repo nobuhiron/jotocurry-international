@@ -4,14 +4,16 @@
 .l-cta-section {
   background-color: var(--color-black);
   padding-block: var(--spacing-6xl);
-  background: url('/cta-bg.webp') no-repeat center center/cover;
+  background: url('/cta-bg.webp') no-repeat top center/cover;
   position: relative;
 }
+
 @media (--md) {
   .l-cta-section {
     padding-block: var(--spacing-6xl);
   }
 }
+
 .l-cta-section::before {
   content: '';
   position: absolute;
@@ -21,6 +23,87 @@
   background-color: var(--color-black);
   opacity: 0.8;
 }
+
+/* PC: 左画像・右テキストの2カラム */
+@media (--lg) {
+  .l-cta-section {
+    padding-block: 0;
+    background: none;
+  }
+
+  .l-cta-section::before {
+    display: none;
+  }
+
+  .l-cta-section__grid {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    min-height: 400px;
+  }
+
+  .l-cta-section__image-area {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .l-cta-section__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right top;
+    display: block;
+  }
+
+  .l-cta-section__grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--color-black) 60%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .l-cta-section__content {
+    display: flex;
+    align-items: center;
+    padding-block: var(--spacing-6xl);
+    background-color: var(--color-black);
+  }
+
+  .l-cta-section__title {
+    text-align: left;
+  }
+
+  .l-cta-section__item {
+    justify-self: start;
+  }
+
+  .l-cta-section__text {
+    text-align: left;
+  }
+
+  .l-cta-section__button {
+    justify-content: flex-start;
+  }
+}
+
+/* モバイル: 画像エリア非表示（セクション背景を使用） */
+.l-cta-section__image-area {
+  display: none;
+}
+
+@media (--lg) {
+  .l-cta-section__image-area {
+    display: block;
+  }
+}
+
 .l-cta-section__inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -28,6 +111,7 @@
   position: relative;
   z-index: 1;
 }
+
 @media (--lg) {
   .l-cta-section__inner {
     row-gap: var(--spacing-4xl);
